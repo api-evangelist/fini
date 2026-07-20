@@ -1,0 +1,33 @@
+generated: '2026-07-19'
+method: searched
+source: openapi/fini-openapi.yml
+docs: https://docs.usefini.com/en/api-reference/authentication
+summary:
+  types:
+  - http
+  http_schemes:
+  - bearer
+  token_format: fini_
+  api_key_scopes:
+  - read
+  - write
+schemes:
+- name: bearerAuth
+  type: http
+  scheme: bearer
+  bearerFormat: fini_ API key
+  in: header
+  header: Authorization
+  description: >-
+    Bearer token containing your Fini workspace API key. Format: `Bearer [example key]`. Every request
+    to the public v2 API authenticates with a workspace API key sent as a bearer token. Keys carry
+    coarse `read` and/or `write` scope; read routes require `read`, write/mutating routes require
+    `write`. A key without the required scope returns 403 Forbidden with body
+    {"statusCode":403,"message":"API key does not have the required scope for this operation","error":"Forbidden"}.
+  scopes:
+  - name: read
+    description: Read/export routes (list and get conversations, sources, articles, folders, rules, tags, agents, prompts).
+  - name: write
+    description: Mutating routes (create/update/delete, ingest, generate knowledge, generate answer, publish, assign).
+  sources:
+  - openapi/fini-openapi.yml
