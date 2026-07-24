@@ -1,0 +1,371 @@
+openapi: 3.1.0
+info:
+  title: Fini AI Agents Tags API
+  version: v2
+  description: Public REST API for Fini AI, the self-improving AI agent for enterprise customer support. Manage agents, conversations, knowledge (sources, articles, folders), rules, tags, and prompts, and drive the agent loop via Generate Answer. Structure captured by API Evangelist from the published Fini API reference; not an official Fini-published OpenAPI.
+  contact:
+    name: Fini AI
+    url: https://docs.usefini.com/en/api-reference/authentication
+  x-apis-json-generated: true
+servers:
+- url: https://api-prod.usefini.com/v2
+  description: Production
+security:
+- bearerAuth: []
+tags:
+- name: Tags
+paths:
+  /tag-groups/{id}/tags/public:
+    post:
+      operationId: createTag
+      summary: Create a tag inside one tag group.
+      tags:
+      - Tags
+      description: Create a tag inside one tag group. Requires the `write` scope.
+      externalDocs:
+        url: https://docs.usefini.com/en/api-reference/create-tag
+      responses:
+        '200':
+          description: Successful response.
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '500':
+          $ref: '#/components/responses/ServerError'
+        '404':
+          $ref: '#/components/responses/NotFound'
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+        description: The id path parameter.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+        description: See the Fini API reference for the request body schema.
+    delete:
+      operationId: deleteTag
+      summary: Delete one tag by tag ID.
+      tags:
+      - Tags
+      description: Delete one tag by tag ID. Requires the `write` scope.
+      externalDocs:
+        url: https://docs.usefini.com/en/api-reference/delete-tag
+      responses:
+        '200':
+          description: Successful response.
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '500':
+          $ref: '#/components/responses/ServerError'
+        '404':
+          $ref: '#/components/responses/NotFound'
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+        description: The id path parameter.
+    get:
+      operationId: listTagsInGroup
+      summary: List the tags inside one tag group.
+      tags:
+      - Tags
+      description: List the tags inside one tag group. Requires the `read` scope.
+      externalDocs:
+        url: https://docs.usefini.com/en/api-reference/list-tags-in-group
+      responses:
+        '200':
+          description: Successful response.
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '500':
+          $ref: '#/components/responses/ServerError'
+        '404':
+          $ref: '#/components/responses/NotFound'
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+        description: The id path parameter.
+    put:
+      operationId: updateTag
+      summary: Update one tag by tag ID.
+      tags:
+      - Tags
+      description: Update one tag by tag ID. Requires the `write` scope.
+      externalDocs:
+        url: https://docs.usefini.com/en/api-reference/update-tag
+      responses:
+        '200':
+          description: Successful response.
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '500':
+          $ref: '#/components/responses/ServerError'
+        '404':
+          $ref: '#/components/responses/NotFound'
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+        description: The id path parameter.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+        description: See the Fini API reference for the request body schema.
+  /tag-groups/public:
+    post:
+      operationId: createTagGroup
+      summary: Create a custom tag group.
+      tags:
+      - Tags
+      description: Create a custom tag group. Requires the `write` scope.
+      externalDocs:
+        url: https://docs.usefini.com/en/api-reference/create-tag-group
+      responses:
+        '200':
+          description: Successful response.
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '500':
+          $ref: '#/components/responses/ServerError'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+        description: See the Fini API reference for the request body schema.
+    get:
+      operationId: listTagGroups
+      summary: List the tag groups visible to your workspace API key, including Fini defaults and workspace-owned custom groups.
+      tags:
+      - Tags
+      description: List the tag groups visible to your workspace API key, including Fini defaults and workspace-owned custom groups. Requires the `read` scope.
+      externalDocs:
+        url: https://docs.usefini.com/en/api-reference/list-tag-groups
+      responses:
+        '200':
+          description: Successful response.
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '500':
+          $ref: '#/components/responses/ServerError'
+  /tag-groups/{id}/public:
+    delete:
+      operationId: deleteTagGroup
+      summary: Delete a custom tag group.
+      tags:
+      - Tags
+      description: Delete a custom tag group. Requires the `write` scope.
+      externalDocs:
+        url: https://docs.usefini.com/en/api-reference/delete-tag-group
+      responses:
+        '200':
+          description: Successful response.
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '500':
+          $ref: '#/components/responses/ServerError'
+        '404':
+          $ref: '#/components/responses/NotFound'
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+        description: The id path parameter.
+    get:
+      operationId: getTagGroup
+      summary: Fetch one tag group by ID.
+      tags:
+      - Tags
+      description: Fetch one tag group by ID. Requires the `read` scope.
+      externalDocs:
+        url: https://docs.usefini.com/en/api-reference/get-tag-group
+      responses:
+        '200':
+          description: Successful response.
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '500':
+          $ref: '#/components/responses/ServerError'
+        '404':
+          $ref: '#/components/responses/NotFound'
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+        description: The id path parameter.
+    put:
+      operationId: updateTagGroup
+      summary: Update a custom tag group.
+      tags:
+      - Tags
+      description: Update a custom tag group. Requires the `write` scope.
+      externalDocs:
+        url: https://docs.usefini.com/en/api-reference/update-tag-group
+      responses:
+        '200':
+          description: Successful response.
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '500':
+          $ref: '#/components/responses/ServerError'
+        '404':
+          $ref: '#/components/responses/NotFound'
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+        description: The id path parameter.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+        description: See the Fini API reference for the request body schema.
+  /tags/{id}/public:
+    get:
+      operationId: getTag
+      summary: Fetch one tag by ID.
+      tags:
+      - Tags
+      description: Fetch one tag by ID. Requires the `read` scope.
+      externalDocs:
+        url: https://docs.usefini.com/en/api-reference/get-tag
+      responses:
+        '200':
+          description: Successful response.
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '500':
+          $ref: '#/components/responses/ServerError'
+        '404':
+          $ref: '#/components/responses/NotFound'
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+        description: The id path parameter.
+  /tag-groups/tags/public:
+    get:
+      operationId: listTagsAcrossGroups
+      summary: List tags across one or more tag groups as a flat array.
+      tags:
+      - Tags
+      description: List tags across one or more tag groups as a flat array. Requires the `read` scope.
+      externalDocs:
+        url: https://docs.usefini.com/en/api-reference/list-tags-across-groups
+      responses:
+        '200':
+          description: Successful response.
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '500':
+          $ref: '#/components/responses/ServerError'
+components:
+  responses:
+    Forbidden:
+      description: API key lacks the required scope.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+          example:
+            statusCode: 403
+            message: API key does not have the required scope for this operation
+            error: Forbidden
+    Unauthorized:
+      description: Missing or invalid API key.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+          example:
+            statusCode: 401
+            message: Unauthorized
+            error: Unauthorized
+    ServerError:
+      description: Internal server error.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+          example:
+            statusCode: 500
+            message: Internal Server Error
+            error: Internal Server Error
+    NotFound:
+      description: Resource not found.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+          example:
+            statusCode: 404
+            message: Not Found
+            error: Not Found
+  schemas:
+    Error:
+      type: object
+      description: Standard Fini error envelope.
+      properties:
+        statusCode:
+          type: integer
+          example: 403
+        message:
+          type: string
+          example: API key does not have the required scope for this operation
+        error:
+          type: string
+          example: Forbidden
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: fini_ API key
+      description: 'Bearer token containing your Fini workspace API key. Format: `Bearer fini_...`. The key carries `read` and/or `write` scope; write routes require the `write` scope.'

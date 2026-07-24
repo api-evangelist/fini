@@ -1,0 +1,194 @@
+openapi: 3.1.0
+info:
+  title: Fini AI Agents Knowledge API
+  version: v2
+  description: Public REST API for Fini AI, the self-improving AI agent for enterprise customer support. Manage agents, conversations, knowledge (sources, articles, folders), rules, tags, and prompts, and drive the agent loop via Generate Answer. Structure captured by API Evangelist from the published Fini API reference; not an official Fini-published OpenAPI.
+  contact:
+    name: Fini AI
+    url: https://docs.usefini.com/en/api-reference/authentication
+  x-apis-json-generated: true
+servers:
+- url: https://api-prod.usefini.com/v2
+  description: Production
+security:
+- bearerAuth: []
+tags:
+- name: Knowledge
+paths:
+  /knowledge/public/bulk:
+    post:
+      operationId: bulkGenerateKnowledge
+      summary: Queue generate-and-save jobs for multiple source IDs in one request.
+      tags:
+      - Knowledge
+      description: Queue generate-and-save jobs for multiple source IDs in one request. Requires the `write` scope.
+      externalDocs:
+        url: https://docs.usefini.com/en/api-reference/bulk-generate-knowledge
+      responses:
+        '200':
+          description: Successful response.
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '500':
+          $ref: '#/components/responses/ServerError'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+        description: See the Fini API reference for the request body schema.
+  /knowledge/public/jobs/status:
+    post:
+      operationId: checkKnowledgeJobs
+      summary: Check status for one or more background knowledge-generation jobs.
+      tags:
+      - Knowledge
+      description: Check status for one or more background knowledge-generation jobs. Requires the `read` scope.
+      externalDocs:
+        url: https://docs.usefini.com/en/api-reference/check-knowledge-jobs
+      responses:
+        '200':
+          description: Successful response.
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '500':
+          $ref: '#/components/responses/ServerError'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+        description: See the Fini API reference for the request body schema.
+  /knowledge/public:
+    post:
+      operationId: generateKnowledge
+      summary: Queue one knowledge-generation job from candidate text, with optional source or inbox linkage.
+      tags:
+      - Knowledge
+      description: Queue one knowledge-generation job from candidate text, with optional source or inbox linkage. Requires the `write` scope.
+      externalDocs:
+        url: https://docs.usefini.com/en/api-reference/generate-knowledge
+      responses:
+        '200':
+          description: Successful response.
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '500':
+          $ref: '#/components/responses/ServerError'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+        description: See the Fini API reference for the request body schema.
+  /knowledge/public/tree/initialize:
+    post:
+      operationId: initializeKnowledgeFolders
+      summary: Generate a downloadable tree-import template file from an initialization prompt.
+      tags:
+      - Knowledge
+      description: Generate a downloadable tree-import template file from an initialization prompt. Requires the `write` scope.
+      externalDocs:
+        url: https://docs.usefini.com/en/api-reference/initialize-knowledge-folders
+      responses:
+        '200':
+          description: Successful response.
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '500':
+          $ref: '#/components/responses/ServerError'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+        description: See the Fini API reference for the request body schema.
+  /knowledge/public/tree/persist:
+    post:
+      operationId: persistKnowledgeFolders
+      summary: Upload a tree file and persist it into the workspace knowledge graph.
+      tags:
+      - Knowledge
+      description: Upload a tree file and persist it into the workspace knowledge graph. Requires the `write` scope.
+      externalDocs:
+        url: https://docs.usefini.com/en/api-reference/persist-knowledge-folders
+      responses:
+        '200':
+          description: Successful response.
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '500':
+          $ref: '#/components/responses/ServerError'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+        description: See the Fini API reference for the request body schema.
+components:
+  responses:
+    Forbidden:
+      description: API key lacks the required scope.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+          example:
+            statusCode: 403
+            message: API key does not have the required scope for this operation
+            error: Forbidden
+    Unauthorized:
+      description: Missing or invalid API key.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+          example:
+            statusCode: 401
+            message: Unauthorized
+            error: Unauthorized
+    ServerError:
+      description: Internal server error.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+          example:
+            statusCode: 500
+            message: Internal Server Error
+            error: Internal Server Error
+  schemas:
+    Error:
+      type: object
+      description: Standard Fini error envelope.
+      properties:
+        statusCode:
+          type: integer
+          example: 403
+        message:
+          type: string
+          example: API key does not have the required scope for this operation
+        error:
+          type: string
+          example: Forbidden
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: fini_ API key
+      description: 'Bearer token containing your Fini workspace API key. Format: `Bearer fini_...`. The key carries `read` and/or `write` scope; write routes require the `write` scope.'

@@ -1,0 +1,275 @@
+openapi: 3.1.0
+info:
+  title: Fini AI Agents Sources API
+  version: v2
+  description: Public REST API for Fini AI, the self-improving AI agent for enterprise customer support. Manage agents, conversations, knowledge (sources, articles, folders), rules, tags, and prompts, and drive the agent loop via Generate Answer. Structure captured by API Evangelist from the published Fini API reference; not an official Fini-published OpenAPI.
+  contact:
+    name: Fini AI
+    url: https://docs.usefini.com/en/api-reference/authentication
+  x-apis-json-generated: true
+servers:
+- url: https://api-prod.usefini.com/v2
+  description: Production
+security:
+- bearerAuth: []
+tags:
+- name: Sources
+paths:
+  /documents/public/deep-crawl/links:
+    post:
+      operationId: crawlLinks
+      summary: Discover additional web URLs from one or more seed links before ingesting them as sources.
+      tags:
+      - Sources
+      description: Discover additional web URLs from one or more seed links before ingesting them as sources. Requires the `write` scope.
+      externalDocs:
+        url: https://docs.usefini.com/en/api-reference/crawl-links
+      responses:
+        '200':
+          description: Successful response.
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '500':
+          $ref: '#/components/responses/ServerError'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+        description: See the Fini API reference for the request body schema.
+  /documents/public:
+    delete:
+      operationId: deleteSources
+      summary: Delete source records and optionally delete the linked Articles in the same request.
+      tags:
+      - Sources
+      description: Delete source records and optionally delete the linked Articles in the same request. Requires the `write` scope.
+      externalDocs:
+        url: https://docs.usefini.com/en/api-reference/delete-sources
+      responses:
+        '200':
+          description: Successful response.
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '500':
+          $ref: '#/components/responses/ServerError'
+    post:
+      operationId: ingestSources
+      summary: Queue first-time ingestion or refresh jobs for web links or existing source IDs.
+      tags:
+      - Sources
+      description: Queue first-time ingestion or refresh jobs for web links or existing source IDs. Requires the `write` scope.
+      externalDocs:
+        url: https://docs.usefini.com/en/api-reference/ingest-sources
+      responses:
+        '200':
+          description: Successful response.
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '500':
+          $ref: '#/components/responses/ServerError'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+        description: See the Fini API reference for the request body schema.
+    get:
+      operationId: listSources
+      summary: Paginate through every source record in the workspace, with filters on source type, title, URL, linked article, and linked operation.
+      tags:
+      - Sources
+      description: Paginate through every source record in the workspace, with filters on source type, title, URL, linked article, and linked operation. Requires the `read` scope.
+      externalDocs:
+        url: https://docs.usefini.com/en/api-reference/list-sources
+      responses:
+        '200':
+          description: Successful response.
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '500':
+          $ref: '#/components/responses/ServerError'
+  /documents/public/{id}:
+    get:
+      operationId: getSource
+      summary: Fetch one source record by ID.
+      tags:
+      - Sources
+      description: Fetch one source record by ID. Requires the `read` scope.
+      externalDocs:
+        url: https://docs.usefini.com/en/api-reference/get-source
+      responses:
+        '200':
+          description: Successful response.
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '500':
+          $ref: '#/components/responses/ServerError'
+        '404':
+          $ref: '#/components/responses/NotFound'
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+        description: The id path parameter.
+  /documents/public/refresh:
+    post:
+      operationId: refreshSources
+      summary: Re-fetch existing source IDs so Fini can detect upstream changes and update linked knowledge.
+      tags:
+      - Sources
+      description: Re-fetch existing source IDs so Fini can detect upstream changes and update linked knowledge. Requires the `write` scope.
+      externalDocs:
+        url: https://docs.usefini.com/en/api-reference/refresh-sources
+      responses:
+        '200':
+          description: Successful response.
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '500':
+          $ref: '#/components/responses/ServerError'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+        description: See the Fini API reference for the request body schema.
+  /documents/public/resources/{provider}:
+    get:
+      operationId: listProviderResources
+      summary: Discover importable resources from a connected provider. Step 1 of the provider import flow.
+      tags:
+      - Sources
+      description: Discover importable resources from a connected provider. Step 1 of the provider import flow. Requires the `read` scope.
+      externalDocs:
+        url: https://docs.usefini.com/en/api-reference/list-provider-resources
+      responses:
+        '200':
+          description: Successful response.
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '500':
+          $ref: '#/components/responses/ServerError'
+        '404':
+          $ref: '#/components/responses/NotFound'
+      parameters:
+      - name: provider
+        in: path
+        required: true
+        schema:
+          type: string
+        description: The provider path parameter.
+    post:
+      operationId: registerProviderResources
+      summary: Create or update source records from provider resources. Step 2 of the connected-source flow.
+      tags:
+      - Sources
+      description: Create or update source records from provider resources. Step 2 of the connected-source flow. Requires the `write` scope.
+      externalDocs:
+        url: https://docs.usefini.com/en/api-reference/register-provider-resources
+      responses:
+        '200':
+          description: Successful response.
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '500':
+          $ref: '#/components/responses/ServerError'
+        '404':
+          $ref: '#/components/responses/NotFound'
+      parameters:
+      - name: provider
+        in: path
+        required: true
+        schema:
+          type: string
+        description: The provider path parameter.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+        description: See the Fini API reference for the request body schema.
+components:
+  responses:
+    Forbidden:
+      description: API key lacks the required scope.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+          example:
+            statusCode: 403
+            message: API key does not have the required scope for this operation
+            error: Forbidden
+    Unauthorized:
+      description: Missing or invalid API key.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+          example:
+            statusCode: 401
+            message: Unauthorized
+            error: Unauthorized
+    ServerError:
+      description: Internal server error.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+          example:
+            statusCode: 500
+            message: Internal Server Error
+            error: Internal Server Error
+    NotFound:
+      description: Resource not found.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+          example:
+            statusCode: 404
+            message: Not Found
+            error: Not Found
+  schemas:
+    Error:
+      type: object
+      description: Standard Fini error envelope.
+      properties:
+        statusCode:
+          type: integer
+          example: 403
+        message:
+          type: string
+          example: API key does not have the required scope for this operation
+        error:
+          type: string
+          example: Forbidden
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: fini_ API key
+      description: 'Bearer token containing your Fini workspace API key. Format: `Bearer fini_...`. The key carries `read` and/or `write` scope; write routes require the `write` scope.'
