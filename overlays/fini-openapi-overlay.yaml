@@ -1,0 +1,29 @@
+# generated: '2026-07-19'
+# method: generated
+# source: openapi/fini-openapi.yml
+overlay: 1.0.0
+info:
+  title: API Evangelist enhancements for Fini AI API
+  version: 1.0.0
+extends: openapi/fini-openapi.yml
+actions:
+- target: $.info
+  update:
+    x-apievangelist-enriched: true
+    x-apievangelist-provenance: >-
+      Structure captured by API Evangelist from the published Fini API reference
+      (docs.usefini.com) and llms-full.txt. Not an official Fini-published OpenAPI.
+    x-apievangelist-artifacts:
+      authentication: authentication/fini-authentication.yml
+      conventions: conventions/fini-conventions.yml
+      errors: errors/fini-problem-types.yml
+      data_model: data-model/fini-data-model.yml
+      lifecycle: lifecycle/fini-lifecycle.yml
+- target: $.info
+  update:
+    x-agentic-access: agentic-access/fini-agentic-access.yml
+- target: $.components.securitySchemes.bearerAuth
+  update:
+    x-scopes:
+    - read
+    - write

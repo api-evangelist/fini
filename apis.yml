@@ -1,8 +1,14 @@
 aid: fini
 name: Fini
-description: 'Fini is a company surfaced as a portfolio company of matrix-partners and added to the API
-  Evangelist network as a stub for enrichment. Sector: ai. This profile is a lead awaiting the enrichment
-  pipeline.'
+description: >-
+  Fini AI provides self-improving AI agents for enterprise customer support across voice, chat, and
+  email. Built on a RAGless retrieval engine, the Fini Agent Loop, a self-updating Knowledge Atlas,
+  and Agentic Actions, Fini understands customer intent, retrieves the right data, and takes action —
+  resolving up to 90% of support tickets at 99% accuracy. It is purpose-built for regulated
+  industries such as fintech, banking, healthcare, insurance, and e-commerce, with PII redaction,
+  audit trails, and guardrails. Fini exposes a public v2 REST API for managing agents, conversations,
+  knowledge (sources, articles, folders), rules, tags, and prompts, and for driving the agent loop
+  through its Generate Answer endpoint. Backed by Y Combinator (S22) and Matrix Partners.
 url: https://raw.githubusercontent.com/api-evangelist/fini/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
@@ -10,18 +16,184 @@ x-backed-by:
 - matrix-partners
 x-tier: stub
 x-tier-reason: portfolio-lead
+accessModel:
+  pricing: unknown
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Self-serve signup
+  confidence: medium
+  source:
+  - authentication
+  generated: '2026-07-22'
+  method: derived
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-19'
 tags:
 - Company
-- Ai
-apis: []
+- Artificial Intelligence
+- AI Agents
+- Customer Support
+- Customer Experience
+- Knowledge Management
+- Conversational AI
+- Voice AI
+- Helpdesk
+- Regulated Industries
+image: https://mintcdn.com/fini/images/shared/logos/fini-light.png
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
+apis:
+- aid: fini:fini-agents-api
+  name: Fini Agents API
+  description: The Agents API from Fini — 1 operation(s) for agents.
+  humanURL: https://docs.usefini.com/en/api-reference/authentication
+  baseURL: https://api-prod.usefini.com/v2
+  tags:
+  - Agents
+  properties:
+  - type: OpenAPI
+    url: openapi/fini-agents-api-openapi.yml
+- aid: fini:fini-articles-api
+  name: Fini Articles API
+  description: The Articles API from Fini — 6 operation(s) for articles.
+  humanURL: https://docs.usefini.com/en/api-reference/authentication
+  baseURL: https://api-prod.usefini.com/v2
+  tags:
+  - Articles
+  properties:
+  - type: OpenAPI
+    url: openapi/fini-articles-api-openapi.yml
+- aid: fini:fini-conversations-api
+  name: Fini Conversations API
+  description: The Conversations API from Fini — 3 operation(s) for conversations.
+  humanURL: https://docs.usefini.com/en/api-reference/authentication
+  baseURL: https://api-prod.usefini.com/v2
+  tags:
+  - Conversations
+  properties:
+  - type: OpenAPI
+    url: openapi/fini-conversations-api-openapi.yml
+- aid: fini:fini-knowledge-api
+  name: Fini Knowledge API
+  description: The Knowledge API from Fini — 5 operation(s) for knowledge.
+  humanURL: https://docs.usefini.com/en/api-reference/authentication
+  baseURL: https://api-prod.usefini.com/v2
+  tags:
+  - Knowledge
+  properties:
+  - type: OpenAPI
+    url: openapi/fini-knowledge-api-openapi.yml
+- aid: fini:fini-knowledge-folders-api
+  name: Fini Knowledge Folders API
+  description: The Knowledge Folders API from Fini — 4 operation(s) for knowledge folders.
+  humanURL: https://docs.usefini.com/en/api-reference/authentication
+  baseURL: https://api-prod.usefini.com/v2
+  tags:
+  - Knowledge Folders
+  properties:
+  - type: OpenAPI
+    url: openapi/fini-knowledge-folders-api-openapi.yml
+- aid: fini:fini-prompts-api
+  name: Fini Prompts API
+  description: The Prompts API from Fini — 3 operation(s) for prompts.
+  humanURL: https://docs.usefini.com/en/api-reference/authentication
+  baseURL: https://api-prod.usefini.com/v2
+  tags:
+  - Prompts
+  properties:
+  - type: OpenAPI
+    url: openapi/fini-prompts-api-openapi.yml
+- aid: fini:fini-rules-api
+  name: Fini Rules API
+  description: The Rules API from Fini — 6 operation(s) for rules.
+  humanURL: https://docs.usefini.com/en/api-reference/authentication
+  baseURL: https://api-prod.usefini.com/v2
+  tags:
+  - Rules
+  properties:
+  - type: OpenAPI
+    url: openapi/fini-rules-api-openapi.yml
+- aid: fini:fini-sources-api
+  name: Fini Sources API
+  description: The Sources API from Fini — 5 operation(s) for sources.
+  humanURL: https://docs.usefini.com/en/api-reference/authentication
+  baseURL: https://api-prod.usefini.com/v2
+  tags:
+  - Sources
+  properties:
+  - type: OpenAPI
+    url: openapi/fini-sources-api-openapi.yml
+- aid: fini:fini-tags-api
+  name: Fini Tags API
+  description: The Tags API from Fini — 5 operation(s) for tags.
+  humanURL: https://docs.usefini.com/en/api-reference/authentication
+  baseURL: https://api-prod.usefini.com/v2
+  tags:
+  - Tags
+  properties:
+  - type: OpenAPI
+    url: openapi/fini-tags-api-openapi.yml
 common:
 - type: Website
   url: https://usefini.com
+- type: DeveloperPortal
+  url: https://docs.usefini.com/introduction
+- type: Documentation
+  url: https://docs.usefini.com/introduction
+- type: APIReference
+  url: https://docs.usefini.com/en/api-reference/authentication
+- type: Blog
+  url: https://www.usefini.com/blog
+- type: Pricing
+  url: https://www.usefini.com/pricing
+- type: SignUp
+  url: https://www.usefini.com/company/contact
+- type: TermsOfService
+  url: https://www.usefini.com/security/terms-of-service
+- type: PrivacyPolicy
+  url: https://www.usefini.com/security/privacy-policy
+- type: Authentication
+  url: authentication/fini-authentication.yml
+- type: Conventions
+  url: conventions/fini-conventions.yml
+- type: ErrorCatalog
+  url: errors/fini-problem-types.yml
+- type: Lifecycle
+  url: lifecycle/fini-lifecycle.yml
+- type: DataModel
+  url: data-model/fini-data-model.yml
+- type: MCPServer
+  url: mcp/fini-mcp.yml
+- type: AgentSkill
+  url: skills/_index.yml
+- type: Overlay
+  url: overlays/fini-openapi-overlay.yaml
+- type: LLMsTxt
+  url: llms/fini-llms.txt
+- type: WellKnown
+  url: well-known/fini-well-known.yml
+- type: AgenticAccess
+  url: agentic-access/fini-agentic-access.yml
+- type: Conformance
+  url: conformance/fini-conformance.yml
+- type: Compliance
+  url: security/fini-trust-center.yml
+- type: TrustCenter
+  url: security/fini-trust-center.yml
+- type: DomainSecurity
+  url: security/fini-domain-security.yml
+- type: VulnerabilityDisclosure
+  url: security/fini-vulnerability-disclosure.yml
+- type: Security
+  url: security/fini-vulnerability-disclosure.yml
+x-enrichment:
+  date: '2026-07-19'
+  status: backfilled
+  pass: local-v1
+  note: backfilled from .gitignore signal + verified work evidence

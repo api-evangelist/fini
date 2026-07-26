@@ -1,0 +1,183 @@
+# candidate MCP tool surface derived from openapi/fini-openapi.yml
+generated: '2026-07-19'
+method: derived
+status: candidate
+source: openapi/fini-openapi.yml
+notes: No official hosted/remote Fini MCP server was found. This is a CANDIDATE tool surface derived one-to-one
+  from the Fini v2 OpenAPI operations, for evaluation only.
+server:
+  name: fini
+  transport: stdio
+tools:
+- name: assignKnowledgeToAgents
+  description: Assign or unassign folders to agents in bulk.
+  source_operation: openapi/fini-openapi.yml#assignKnowledgeToAgents
+- name: bulkDeleteConversations
+  description: Delete up to 50 conversations in one request through the public Conversations API.
+  source_operation: openapi/fini-openapi.yml#bulkDeleteConversations
+- name: bulkGenerateKnowledge
+  description: Queue generate-and-save jobs for multiple source IDs in one request.
+  source_operation: openapi/fini-openapi.yml#bulkGenerateKnowledge
+- name: checkKnowledgeJobs
+  description: Check status for one or more background knowledge-generation jobs.
+  source_operation: openapi/fini-openapi.yml#checkKnowledgeJobs
+- name: crawlLinks
+  description: Discover additional web URLs from one or more seed links before ingesting them as sources.
+  source_operation: openapi/fini-openapi.yml#crawlLinks
+- name: createArticle
+  description: Create a live article or draft article directly in the workspace.
+  source_operation: openapi/fini-openapi.yml#createArticle
+- name: createArticleDraft
+  description: Create a draft from an existing live article.
+  source_operation: openapi/fini-openapi.yml#createArticleDraft
+- name: createKnowledgeFolder
+  description: Create a folder in the knowledge tree.
+  source_operation: openapi/fini-openapi.yml#createKnowledgeFolder
+- name: createRule
+  description: Create a published rule.
+  source_operation: openapi/fini-openapi.yml#createRule
+- name: createRuleDraft
+  description: Generate a draft rule from instructions.
+  source_operation: openapi/fini-openapi.yml#createRuleDraft
+- name: createTag
+  description: Create a tag inside one tag group.
+  source_operation: openapi/fini-openapi.yml#createTag
+- name: createTagGroup
+  description: Create a custom tag group.
+  source_operation: openapi/fini-openapi.yml#createTagGroup
+- name: deleteArticle
+  description: Delete an article.
+  source_operation: openapi/fini-openapi.yml#deleteArticle
+- name: deleteConversation
+  description: Delete one conversation by ID through the public Conversations API.
+  source_operation: openapi/fini-openapi.yml#deleteConversation
+- name: deleteKnowledgeFolder
+  description: Delete a folder from the knowledge tree.
+  source_operation: openapi/fini-openapi.yml#deleteKnowledgeFolder
+- name: deleteRule
+  description: Delete one rule.
+  source_operation: openapi/fini-openapi.yml#deleteRule
+- name: deleteSources
+  description: Delete source records and optionally delete the linked Articles in the same request.
+  source_operation: openapi/fini-openapi.yml#deleteSources
+- name: deleteTag
+  description: Delete one tag by tag ID.
+  source_operation: openapi/fini-openapi.yml#deleteTag
+- name: deleteTagGroup
+  description: Delete a custom tag group.
+  source_operation: openapi/fini-openapi.yml#deleteTagGroup
+- name: duplicateRule
+  description: Create a copy of an existing rule.
+  source_operation: openapi/fini-openapi.yml#duplicateRule
+- name: generateAnswer
+  description: Send a message event into Fini and return the public events created for that submission.
+  source_operation: openapi/fini-openapi.yml#generateAnswer
+- name: generateKnowledge
+  description: Queue one knowledge-generation job from candidate text, with optional source or inbox linkage.
+  source_operation: openapi/fini-openapi.yml#generateKnowledge
+- name: getArticlesByIds
+  description: Fetch one or more articles by ID.
+  source_operation: openapi/fini-openapi.yml#getArticlesByIds
+- name: getConversation
+  description: Fetch one public conversation by ID.
+  source_operation: openapi/fini-openapi.yml#getConversation
+- name: getKnowledgeFolders
+  description: Return the current knowledge-tree snapshot, optionally scoped to one agent.
+  source_operation: openapi/fini-openapi.yml#getKnowledgeFolders
+- name: getPromptHistory
+  description: List saved prompt versions for one agent, newest first.
+  source_operation: openapi/fini-openapi.yml#getPromptHistory
+- name: getPrompts
+  description: Fetch the current merged prompts for one agent.
+  source_operation: openapi/fini-openapi.yml#getPrompts
+- name: getRule
+  description: Fetch one rule by ID with its full tree.
+  source_operation: openapi/fini-openapi.yml#getRule
+- name: getSource
+  description: Fetch one source record by ID.
+  source_operation: openapi/fini-openapi.yml#getSource
+- name: getTag
+  description: Fetch one tag by ID.
+  source_operation: openapi/fini-openapi.yml#getTag
+- name: getTagGroup
+  description: Fetch one tag group by ID.
+  source_operation: openapi/fini-openapi.yml#getTagGroup
+- name: ingestSources
+  description: Queue first-time ingestion or refresh jobs for web links or existing source IDs.
+  source_operation: openapi/fini-openapi.yml#ingestSources
+- name: initializeKnowledgeFolders
+  description: Generate a downloadable tree-import template file from an initialization prompt.
+  source_operation: openapi/fini-openapi.yml#initializeKnowledgeFolders
+- name: listAgents
+  description: List the agents in the workspace tied to your API key so you can map names to bot IDs.
+  source_operation: openapi/fini-openapi.yml#listAgents
+- name: listArticles
+  description: List live articles, draft articles, or both.
+  source_operation: openapi/fini-openapi.yml#listArticles
+- name: listConversations
+  description: Read all Fini conversations for your workspace, sorted newest first, with cursor pagination.
+  source_operation: openapi/fini-openapi.yml#listConversations
+- name: listProviderResources
+  description: Discover importable resources from a connected provider. Step 1 of the provider import
+    flow.
+  source_operation: openapi/fini-openapi.yml#listProviderResources
+- name: listRules
+  description: List rules in the workspace by type and draft state.
+  source_operation: openapi/fini-openapi.yml#listRules
+- name: listSources
+  description: Paginate through every source record in the workspace, with filters on source type, title,
+    URL, linked article, and linked operation.
+  source_operation: openapi/fini-openapi.yml#listSources
+- name: listTagGroups
+  description: List the tag groups visible to your workspace API key, including Fini defaults and workspace-owned
+    custom groups.
+  source_operation: openapi/fini-openapi.yml#listTagGroups
+- name: listTagsAcrossGroups
+  description: List tags across one or more tag groups as a flat array.
+  source_operation: openapi/fini-openapi.yml#listTagsAcrossGroups
+- name: listTagsInGroup
+  description: List the tags inside one tag group.
+  source_operation: openapi/fini-openapi.yml#listTagsInGroup
+- name: moveArticle
+  description: Move an article into a different folder.
+  source_operation: openapi/fini-openapi.yml#moveArticle
+- name: moveKnowledgeFolder
+  description: Move a folder under a different parent in the knowledge tree.
+  source_operation: openapi/fini-openapi.yml#moveKnowledgeFolder
+- name: persistKnowledgeFolders
+  description: Upload a tree file and persist it into the workspace knowledge graph.
+  source_operation: openapi/fini-openapi.yml#persistKnowledgeFolders
+- name: publishArticleDraft
+  description: Publish a draft article.
+  source_operation: openapi/fini-openapi.yml#publishArticleDraft
+- name: publishRuleDraft
+  description: Publish a draft rule and assign it to one or more agents.
+  source_operation: openapi/fini-openapi.yml#publishRuleDraft
+- name: refineRuleDraft
+  description: Regenerate a draft rule using refinement instructions.
+  source_operation: openapi/fini-openapi.yml#refineRuleDraft
+- name: refreshSources
+  description: Re-fetch existing source IDs so Fini can detect upstream changes and update linked knowledge.
+  source_operation: openapi/fini-openapi.yml#refreshSources
+- name: registerProviderResources
+  description: Create or update source records from provider resources. Step 2 of the connected-source
+    flow.
+  source_operation: openapi/fini-openapi.yml#registerProviderResources
+- name: updateArticle
+  description: Update an existing article.
+  source_operation: openapi/fini-openapi.yml#updateArticle
+- name: updateKnowledgeFolder
+  description: Update a folder's title, description, or active state.
+  source_operation: openapi/fini-openapi.yml#updateKnowledgeFolder
+- name: updatePrompts
+  description: Save a new prompt version for one agent.
+  source_operation: openapi/fini-openapi.yml#updatePrompts
+- name: updateRule
+  description: Update an existing rule.
+  source_operation: openapi/fini-openapi.yml#updateRule
+- name: updateTag
+  description: Update one tag by tag ID.
+  source_operation: openapi/fini-openapi.yml#updateTag
+- name: updateTagGroup
+  description: Update a custom tag group.
+  source_operation: openapi/fini-openapi.yml#updateTagGroup

@@ -1,0 +1,30 @@
+{
+  "provider": "fini",
+  "sources": [
+    "fini-agents-api-openapi.yml",
+    "fini-articles-api-openapi.yml",
+    "fini-conversations-api-openapi.yml",
+    "fini-knowledge-api-openapi.yml",
+    "fini-knowledge-folders-api-openapi.yml",
+    "fini-prompts-api-openapi.yml",
+    "fini-rules-api-openapi.yml",
+    "fini-sources-api-openapi.yml",
+    "fini-tags-api-openapi.yml"
+  ],
+  "outputs": [
+    "fini-agents-api-openapi.yml",
+    "fini-articles-api-openapi.yml",
+    "fini-conversations-api-openapi.yml",
+    "fini-knowledge-api-openapi.yml",
+    "fini-knowledge-folders-api-openapi.yml",
+    "fini-prompts-api-openapi.yml",
+    "fini-rules-api-openapi.yml",
+    "fini-sources-api-openapi.yml",
+    "fini-tags-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}

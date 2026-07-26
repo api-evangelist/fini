@@ -1,0 +1,49 @@
+generated: '2026-07-19'
+method: searched
+source: https://docs.usefini.com/ (Fini API reference)
+authentication:
+  style: bearer-api-key
+  header: Authorization
+  token_format: fini_
+  scopes: [read, write]
+  ref: authentication/fini-authentication.yml
+idempotency:
+  supported: false
+  notes: >-
+    No Idempotency-Key header or idempotent-retry contract is documented in the Fini API reference.
+    Bulk mutations are constrained instead (e.g. bulk delete limited to 50 IDs per request).
+pagination:
+  style: cursor
+  params:
+    limit: "Maximum records to return (list conversations: min 1, max 100)."
+    cursor: Resource ID to paginate from (nextCursor / prevCursor for conversations; last/first id for sources).
+    direction: "next | previous — inverted mapping: next moves to OLDER records, previous toward NEWER (results are sorted descending)."
+  response_fields: [nextCursor, prevCursor]
+  time_window:
+    params: [since, until]
+    unit: unix-epoch-milliseconds
+    max_window_days: 90
+    default: last 7 days
+error_envelope:
+  format: json
+  media_type: application/json
+  shape: '{ statusCode: integer, message: string, error: string }'
+  problem_json: false
+  ref: errors/fini-problem-types.yml
+versioning:
+  scheme: uri-path
+  current: v2
+  base_url: https://api-prod.usefini.com/v2
+rate_limiting:
+  documented: false
+  notes: No published rate-limit headers or quotas found in the API reference.
+async_jobs:
+  notes: >-
+    Knowledge ingestion and generation are asynchronous; calls return immediately with a job, polled
+    via check-knowledge-jobs (POST /knowledge/public/jobs/status).
+route_convention:
+  notes: Every public API path is suffixed with /public and mounted under /v2.
+cross_links:
+  authentication: authentication/fini-authentication.yml
+  errors: errors/fini-problem-types.yml
+  lifecycle: lifecycle/fini-lifecycle.yml

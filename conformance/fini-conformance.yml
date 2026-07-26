@@ -1,0 +1,29 @@
+generated: '2026-07-19'
+method: searched
+source: https://security.usefini.com/
+standards:
+- id: soc2
+  name: SOC 2
+  conforms: true
+  evidence: Listed on the Fini security portal (security.usefini.com).
+- id: iso-27001
+  name: ISO/IEC 27001
+  conforms: true
+  evidence: Listed on the Fini security portal (security.usefini.com).
+- id: gdpr
+  name: GDPR
+  conforms: true
+  evidence: Listed on the Fini security portal; DPA available.
+- id: hipaa
+  name: HIPAA
+  conforms: true
+  evidence: HIPAA-compliant AI support for PHI referenced in Fini guides/security posture (healthcare vertical).
+- id: oauth2
+  conforms: false
+  evidence: API uses bearer API-key auth (fini_ keys) with read/write scopes, not OAuth2 flows.
+- id: rfc9457-problem-details
+  conforms: false
+  evidence: Error responses use a {statusCode, message, error} envelope, not application/problem+json.
+- id: cursor-pagination
+  conforms: true
+  evidence: List endpoints use cursor pagination (cursor + direction next/previous), documented in the API reference.

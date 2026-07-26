@@ -1,0 +1,16 @@
+generated: '2026-07-19'
+method: generated
+source: openapi/fini-openapi.yml
+skills:
+- file: fini-answer-customer-question.md
+  name: Answer a customer question with a Fini agent
+  api: openapi/fini-openapi.yml
+  operations: [listAgents, generateAnswer, getConversation]
+- file: fini-ingest-and-publish-knowledge.md
+  name: Ingest sources and publish knowledge to a Fini agent
+  api: openapi/fini-openapi.yml
+  operations: [ingestSources, checkKnowledgeJobs, listSources, generateKnowledge, createArticle, publishArticleDraft, getKnowledgeFolders, assignKnowledgeToAgents]
+- file: fini-export-conversations.md
+  name: Export Fini conversations for QA and analytics
+  api: openapi/fini-openapi.yml
+  operations: [listAgents, listConversations, getConversation, bulkDeleteConversations]

@@ -1,0 +1,92 @@
+generated: '2026-07-19'
+method: derived
+source: openapi/fini-openapi.yml
+notes: >-
+  Entity-relationship model derived from the Fini v2 API resource surface and id-reference fields
+  documented in the API reference. Fini's knowledge lives as a tree of folders containing articles,
+  sourced from ingested documents/sources, governed by rules, classified by tags, and served by
+  agents through conversations.
+entities:
+- name: Agent
+  aka: bot
+  api_path: /bots/public
+  description: A configured Fini AI support agent (bot). Owns prompts and is assigned knowledge folders.
+  id_field: botId
+- name: Prompt
+  api_path: /bots/{id}/hc-prompt/public
+  description: The merged prompt configuration for one agent, versioned with history.
+  belongs_to: Agent
+- name: Conversation
+  aka: hc-interaction
+  api_path: /hc-interactions/public
+  description: A customer support conversation Fini has touched, across channels (chat, voice, email) and sources.
+  id_field: id
+- name: Source
+  aka: document
+  api_path: /documents/public
+  description: An ingested knowledge source (web, files, googledrive, zendesk, notion, confluence). Processed asynchronously.
+  id_field: id
+- name: Article
+  aka: hc-article
+  api_path: /hc-articles/public
+  description: A live or draft knowledge article, generated from sources and organized into folders.
+  id_field: id
+- name: KnowledgeFolder
+  aka: hc-folder
+  api_path: /hc-folders/public
+  description: A node in the knowledge tree that contains articles and can be assigned to agents.
+  id_field: id
+- name: Rule
+  aka: hc-rule
+  api_path: /hc-rules/public
+  description: A published or draft behavior rule assigned to one or more agents.
+  id_field: id
+- name: TagGroup
+  api_path: /tag-groups/public
+  description: A group (Fini default or workspace-custom) that contains tags.
+  id_field: id
+- name: Tag
+  api_path: /tags/{id}/public
+  description: A classification tag that belongs to exactly one tag group.
+  id_field: id
+  belongs_to: TagGroup
+- name: KnowledgeJob
+  api_path: /knowledge/public/jobs/status
+  description: An async background job for knowledge generation/ingestion.
+relationships:
+- from: Agent
+  to: Prompt
+  type: has_one
+  via: botId
+- from: Agent
+  to: KnowledgeFolder
+  type: has_many
+  via: hc-bot-folder-junctions
+  notes: Folders are assigned/unassigned to agents in bulk via /hc-bot-folder-junctions/public.
+- from: KnowledgeFolder
+  to: Article
+  type: has_many
+  via: folder
+- from: KnowledgeFolder
+  to: KnowledgeFolder
+  type: has_many
+  via: parent
+  notes: Folders form a tree; a folder can be moved under a different parent.
+- from: Article
+  to: Source
+  type: belongs_to
+  via: source
+  notes: Articles are generated from ingested sources; deleting sources can optionally delete linked articles.
+- from: Rule
+  to: Agent
+  type: has_many
+  via: assignment
+  notes: A published rule is assigned to one or more agents.
+- from: Tag
+  to: TagGroup
+  type: belongs_to
+  via: tagGroupId
+- from: Conversation
+  to: Agent
+  type: belongs_to
+  via: agentId

@@ -1,0 +1,35 @@
+generated: '2026-07-19'
+method: derived
+source: openapi/fini-openapi.yml
+format: custom-envelope
+envelope:
+  media_type: application/json
+  shape: '{ statusCode: integer, message: string, error: string }'
+  problem_json: false
+problems:
+- status: 400
+  error: Bad Request
+  title: Invalid request parameters
+  remediation: >-
+    Check request parameters. For list conversations, since must be strictly earlier than until and
+    the window cannot exceed 90 days.
+- status: 401
+  error: Unauthorized
+  title: Missing or invalid API key
+  remediation: "Provide a valid `Authorization: Bearer fini_...` header."
+- status: 403
+  error: Forbidden
+  title: API key does not have the required scope for this operation
+  remediation: Use an API key that carries the required `read` or `write` scope for the route.
+- status: 404
+  error: Not Found
+  title: Resource not found
+  remediation: Verify the resource ID (some routes return null rather than 404 when a linked record is absent).
+- status: 406
+  error: Not Acceptable
+  title: Not acceptable
+  remediation: Ensure the request Content-Type/Accept and body shape match the endpoint contract.
+- status: 500
+  error: Internal Server Error
+  title: Internal server error
+  remediation: Retry later; contact Fini support if the error persists.

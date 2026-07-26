@@ -1,0 +1,22 @@
+generated: '2026-07-19'
+method: searched
+source: https://docs.usefini.com/ (Fini API reference) + https://security.usefini.com/
+versioning:
+  scheme: uri-path
+  current: v2
+  base_url: https://api-prod.usefini.com/v2
+  docs: https://docs.usefini.com/en/api-reference/authentication
+deprecation:
+  policy_url: null
+  sunset_header: false
+  notes: No public deprecation policy or RFC 8594 Sunset/Deprecation header support documented.
+sla:
+  url: null
+  uptime_target: null
+status_page: null
+security_portal: https://security.usefini.com/
+deprecated_operations: []
+notes: >-
+  No dedicated status page (status.usefini.com does not resolve) or deprecation policy was found at
+  probe time. The API is versioned in the URI path at v2. Security/compliance posture is published on
+  the security portal (SOC 2, ISO 27001, GDPR).

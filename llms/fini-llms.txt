@@ -1,0 +1,150 @@
+# Fini AI
+
+> Self-improving AI agent for enterprise customer support. Resolves 90% of support tickets with 99% accuracy across voice, chat, and email. Purpose-built for fintech, banking, healthcare, insurance, and other regulated industries where compliance is non-negotiable.
+
+Fini is a multi-modal AI agent that understands customer intent, retrieves the right data, and takes action. Live in 14 days, fully autonomous in 30. Backed by Y Combinator (S22) and Matrix Partners. Used by Atlas, Wefunder, ICICI Bank, PostFinance, Acorns, CoverGenius, Unit, Column Tax, Qogita, Found, Bitdefender, DistroKid, LISA Hockey, TrainingPeaks, and US Chamber of Commerce.
+
+Core architecture is RAGless retrieval combined with the Fini Agent Loop, Knowledge Atlas (self-updating AI help center), and Agentic Actions. The Era 2 positioning is "agents maintaining agents," where Fini detects its own knowledge gaps, learns from real resolutions, and keeps getting sharper without human re-tuning. Zero-Pay Guarantee: 90% resolution in 90 days, or you pay nothing.
+
+## Home
+
+- [Fini AI Home](https://www.usefini.com/): Self-improving AI customer support agent. Resolves 90% of tickets with 99% accuracy across voice, chat, and email.
+
+## Core Pages
+
+- [Pricing](https://www.usefini.com/pricing): Pricing tiers, per-resolution economics, and Zero-Pay Guarantee terms.
+- [Comparison](https://www.usefini.com/comparison): Side-by-side comparison of Fini against the leading AI customer support platforms.
+- [Trust Metrics](https://www.usefini.com/trust-metrics): Live accuracy, resolution, and reliability benchmarks across Fini deployments.
+- [Better Together](https://www.usefini.com/better-together): Fini and Microsoft partnership, Azure-aligned enterprise deployment.
+
+## Product
+
+- [Platform & Sophie](https://www.usefini.com/product/platform): Platform overview: Sophie, RAGless Retrieval Engine, Fini Agent Loop, Knowledge Atlas, Agentic Actions, Voice, Guardrails, Intelligence.
+- [Integrations](https://www.usefini.com/product/integrations): One-click integrations with Zendesk, Intercom, Salesforce, HubSpot, Front, Freshdesk, Gorgias, Kustomer, Help Scout, Livechat, Slack, Microsoft Teams, Shopify, WhatsApp, Notion, Confluence, Google Drive.
+- [Timeline](https://www.usefini.com/product/timeline): Implementation timeline: connect, train, test, go live in 14 days. Fully autonomous in 30.
+- [ROI Calculator](https://www.usefini.com/product/roi-calculator): Model cost savings, resolution rate, and unit economics for your support volume.
+
+## Industries
+
+- [Finance](https://www.usefini.com/industries/finance): AI customer support purpose-built for fintech, banking, lending, payments, and regulated financial workflows with PII redaction and audit trails.
+- [E-commerce](https://www.usefini.com/industries/e-commerce): AI agent for order tracking, returns, product recommendations, and high-volume e-commerce support.
+- [Technology (B2B SaaS)](https://www.usefini.com/industries/technology): AI support for B2B SaaS and tech teams that resolves complex, multi-party tickets by calling your own APIs, not just the help center. Runs on all major helpdesks.
+- [Gaming](https://www.usefini.com/industries/gaming): Multilingual AI support for gaming companies handling player issues, refunds, account workflows, and live-ops spikes.
+- [Healthcare](https://www.usefini.com/industries/healthcare): AI support for healthcare and health-tech teams handling patient, billing, and account questions across chat, email, and voice. Handles billing and access, never the diagnosis.
+
+## Company
+
+- [About Us](https://www.usefini.com/company/about-us): Company background, mission, and the team behind Fini.
+- [Contact](https://www.usefini.com/company/contact): Get in touch with the Fini team.
+
+## Customer Stories
+
+- [All Case Studies](https://www.usefini.com/case-studies): Customer wins across fintech, e-commerce, gaming, and regulated industries.
+- [Atlas: 70% of Fintech Support Journeys Automated](https://www.usefini.com/blog/how-atlas-safely-automated-70-of-key-fintech-support-journeys-with-fini): How Atlas safely automated 70% of key fintech support journeys with Fini.
+- [Wefunder Case Study](https://www.usefini.com/blog/wefunder-case-study): How Wefunder scaled regulated investment-platform support with Fini.
+- [LISA Case Study](https://www.usefini.com/blog/lisa-case-study): How LISA Hockey scaled support quality with Fini.
+- [Qogita Case Study](https://www.usefini.com/blog/case-study-qogita): How Qogita automated high-volume B2B marketplace support.
+- [DistroKid Case Study](https://www.usefini.com/blog/one-size-doesnt-fit-all-how-we-scaled-support-excellence-for-distrokid): How Fini scaled support excellence for DistroKid.
+- [Peaksware Case Study](https://www.usefini.com/blog/peaksware-case-study): How Peaksware improved support outcomes with Fini.
+
+## Compare
+
+- [Compare AI Support Platforms (Hub)](https://www.usefini.com/compare): Side-by-side breakdowns of the leading AI customer support platforms on architecture, accuracy, channel coverage, pricing, go-live, and vertical fit for regulated industries.
+- [Decagon vs Fini](https://www.usefini.com/compare/decagon-vs-fini): How Fini compares to Decagon for autonomous AI support.
+- [Fini vs Intercom Fin](https://www.usefini.com/blog/fini-ai-vs-intercom-fin): How Fini compares to Intercom Fin on resolution, accuracy, and regulated-industry fit.
+- [Fini vs Zendesk AI](https://www.usefini.com/blog/fini-vs-zendesk-ai): How Fini compares to Zendesk AI for autonomous resolution.
+- [Fini vs Salesforce Agentforce](https://www.usefini.com/blog/fini-vs-agentforce-salesforce-support-ai-which-ai-agent-is-right-for-your-support-team): How Fini compares to Salesforce Agentforce for support automation.
+- [Fini vs Ada](https://www.usefini.com/blog/fini-ai-vs-ada): How Fini compares to Ada for AI customer support.
+- [10 Best AI Customer Support Tools (Comparison and Pricing)](https://www.usefini.com/blog/the-10-best-ai-customer-support-tools-in-2025-complete-comparison-and-pricing-guide): Comparison and pricing guide for the leading AI customer support tools.
+
+## Key Articles (Fini Labs)
+
+- [What Is RAGless](https://www.usefini.com/blog/what-is-ragless): Why RAGless retrieval beats traditional RAG for accuracy-critical support.
+- [Why RAG Is Too Broad to Be Useful](https://www.usefini.com/blog/why-most-rag-applications-are-too-broad-to-be-useful-and-why-the-future-is-ragless): The case against broad RAG and for structured execution.
+- [The Fini Knowledge Atlas](https://www.usefini.com/blog/fini-knowledge-atlas): The self-updating AI help center at the core of Fini.
+- [The Knowledge Architecture Problem](https://www.usefini.com/blog/the-knowledge-architecture-problem-and-how-to-solve-it): Why knowledge structure, not model size, determines support accuracy.
+- [Deflection Rate vs Resolution Rate](https://www.usefini.com/blog/deflection-rate-vs-resolution-rate-ai-support): Why resolution, not deflection, is the metric that matters.
+- [RAG vs Structured Execution](https://www.usefini.com/blog/rag-vs-structured-execution-ai-customer-support): How structured execution outperforms RAG for taking action.
+- [AI Support Chatbot vs AI Support Agent](https://www.usefini.com/blog/ai-support-chatbot-vs-ai-support-agent): The difference between answering and resolving.
+- [Agentic AI vs AI Agents](https://www.usefini.com/blog/agentic-ai-vs-ai-agents-what-every-tech-leader-needs-to-know-in-2025): What every tech leader needs to know about the distinction.
+- [The End of Human-First Support](https://www.usefini.com/blog/the-end-of-human-first-support-why-2026-will-be-the-year-agentic): Why 2026 is the year support goes agentic.
+- [The Zero-Pay Guarantee](https://www.usefini.com/blog/the-fini-zero-pay-guarantee-ai-that-delivers-or-you-pay-nothing): 90% resolution in 90 days, or you pay nothing.
+- [Trust Metrics for AI Support](https://www.usefini.com/blog/trust-metrics-for-ai-customer-support-why-deflection-rate-is-killing-your-customer-experience): Why deflection rate is hurting your customer experience.
+- [The Matrix Where Fini Wins](https://www.usefini.com/blog/the-matrix-where-fini-wins-redefining-the-ai-support-landscape): How Fini redefines the AI support landscape.
+- [Automation vs Escalation](https://www.usefini.com/blog/automation-vs-escalation-in-ai-customer-support): Designing the line between automated resolution and human handoff.
+- [Guardrails in Agentic AI Support](https://www.usefini.com/blog/the-importance-of-guardrails-in-agenticai-customer-support): Why guardrails are essential for trustworthy automation.
+- [From Chatbots to Agentic AI](https://www.usefini.com/blog/from-chatbots-to-agentic-ai-the-next-leap-in-customer-support): The next leap in customer support.
+- [The 56% Reality Check](https://www.usefini.com/blog/the-56-reality-check-why-customers-expect-ai-to-handle-half-your-support-by-2026): Why customers expect AI to handle half of support by 2026.
+- [EU AI Act Compliance Checklist](https://www.usefini.com/blog/eu-ai-act-compliance-checklist-for-customer-support-chatbots): A compliance checklist for customer support chatbots under the EU AI Act.
+
+## Guides
+
+- [Guides Index](https://www.usefini.com/guides): Practical playbooks for selecting, deploying, and operating AI support agents across industries.
+- [How to Choose an Enterprise AI Support Platform](https://www.usefini.com/guides/how-to-choose-ai-customer-support-platform-enterprise): A buyer framework for evaluating enterprise AI support platforms.
+- [AI Support Platforms Vendor Comparison Guide](https://www.usefini.com/guides/ai-customer-support-platforms-vendor-comparison-guide): Compare the leading AI support vendors across key criteria.
+- [Which AI Support Platform Fits Your Stack](https://www.usefini.com/guides/which-ai-customer-support-platform-fits-your-stack-shortlist): Shortlist platforms by your existing CRM and helpdesk stack.
+- [AI Support for Compliance Risk in Regulated Industries](https://www.usefini.com/guides/how-ai-customer-support-platforms-solve-compliance-risk-regulated-industries): How AI support platforms handle compliance risk in regulated industries.
+- [HIPAA-Compliant AI Support Tools](https://www.usefini.com/guides/hipaa-compliant-ai-support-tools-phi-production): AI support tools that handle PHI in production.
+- [ISO 27001 Certified AI Support Platforms](https://www.usefini.com/guides/iso-27001-certified-ai-customer-support-platforms): AI support platforms with ISO 27001 certification.
+- [Best AI Support Software for Insurance](https://www.usefini.com/guides/best-ai-support-software-insurance-companies): AI support software built for insurers.
+- [AI Voice Agents for End-to-End IVR Replacement](https://www.usefini.com/guides/ai-voice-agents-end-to-end-ivr-replacement): Replace legacy IVR with conversational AI voice agents.
+- [Best Voice AI Platforms to Replace IVR](https://www.usefini.com/guides/best-voice-ai-platforms-replace-ivr): Compare voice AI platforms for IVR replacement.
+- [Top AI Support Vendors with Transparent Pricing](https://www.usefini.com/guides/top-ai-customer-support-vendors-transparent-pricing): AI support vendors with clear, transparent pricing.
+- [AI Support Software Pricing and TCO](https://www.usefini.com/guides/ai-customer-support-software-pricing-tco): Total cost of ownership for AI support software.
+
+## Glossary
+
+- [Glossary Index](https://www.usefini.com/glossary): AI customer support terminology, compliance frameworks, and regulated-industry concepts.
+- [DORA Compliance](https://www.usefini.com/glossary/dora-compliance)
+- [Data Residency](https://www.usefini.com/glossary/data-residency)
+- [AI Red Teaming](https://www.usefini.com/glossary/ai-red-teaming)
+- [KYC Automation](https://www.usefini.com/glossary/kyc-automation)
+- [Prior Authorization Automation](https://www.usefini.com/glossary/prior-authorization-automation)
+- [SOC 2 Type II](https://www.usefini.com/glossary/soc-2-type-ii)
+- [ISO 27001](https://www.usefini.com/glossary/iso-27001)
+- [ISO 42001](https://www.usefini.com/glossary/iso-42001)
+- [AI Compliance](https://www.usefini.com/glossary/ai-compliance)
+- [HIPAA Compliance](https://www.usefini.com/glossary/hipaa-compliance)
+- [Telephony](https://www.usefini.com/glossary/telephony)
+- [Prosody](https://www.usefini.com/glossary/prosody)
+- [Automatic Speech Recognition](https://www.usefini.com/glossary/automatic-speech-recognition)
+- [DTMF](https://www.usefini.com/glossary/dtmf)
+- [Latency](https://www.usefini.com/glossary/latency)
+- [Net Promoter Score](https://www.usefini.com/glossary/net-promoter-score)
+- [Model Context Protocol](https://www.usefini.com/glossary/model-context-protocol)
+- [Customer Lifetime Value](https://www.usefini.com/glossary/customer-lifetime-value)
+- [Help Desk](https://www.usefini.com/glossary/help-desk)
+- [Natural Language Generation](https://www.usefini.com/glossary/natural-language-generation)
+- [Knowledge Base](https://www.usefini.com/glossary/knowledge-base)
+- [Escalation Rate](https://www.usefini.com/glossary/escalation-rate)
+- [Contextual Analysis](https://www.usefini.com/glossary/contextual-analysis)
+- [Telephone Consumer Protection Act](https://www.usefini.com/glossary/telephone-consumer-protection-act)
+- [PSTN](https://www.usefini.com/glossary/pstn)
+- [Echo Cancellation](https://www.usefini.com/glossary/echo-cancellation)
+- [Multi-Turn Conversation](https://www.usefini.com/glossary/multi-turn-conversation)
+- [Conversational AI Design](https://www.usefini.com/glossary/conversational-ai-design)
+- [Contact Center as a Service](https://www.usefini.com/glossary/contact-center-as-a-service)
+- [Average Handling Time](https://www.usefini.com/glossary/average-handling-time)
+- [Ticketing System](https://www.usefini.com/glossary/ticketing-system)
+- [Voice of the Customer](https://www.usefini.com/glossary/voice-of-the-customer)
+- [Call Center Shrinkage](https://www.usefini.com/glossary/call-center-shrinkage)
+- [Interactive Voice Response](https://www.usefini.com/glossary/interactive-voice-response)
+- [Fine-Tuning](https://www.usefini.com/glossary/fine-tuning)
+- [Customer Effort Score](https://www.usefini.com/glossary/customer-effort-score)
+
+## Podcast
+
+- [The Fini Podcast](https://www.usefini.com/podcast): Heads of Support, VPs of CX, and support leaders share real stories of deploying AI in customer experience. Hosted by Leonardo Maestri. On Spotify, Apple Podcasts, and YouTube.
+- [All Podcast Episodes](https://www.usefini.com/podcast-episodes): Full episode archive.
+
+## Resources
+
+- [Resource Library Index](https://www.usefini.com/resource-library): White papers, industry reports, and downloadable enterprise research.
+- [The Knowledge Atlas: Structured Reasoning and Autonomous Management for Enterprise AI Support](https://www.usefini.com/resource-library/the-knowledge-atlas-structured-reasoning-and-autonomous-management-for-enterprise-ai-support): The architecture behind Fini's self-updating knowledge layer.
+- [State of AI Agents in Fintech Support 2026](https://www.usefini.com/resource-library/state-of-ai-agents-in-fintech-support-2026): Industry report on AI agent adoption in fintech support.
+- [RAGless AI for Customer Support](https://www.usefini.com/resource-library/ragless-ai-for-customer-support-a-new-standard-for-accuracy-safety-and-scale): A new standard for accuracy, safety, and scale.
+- [Fini AI: RAGless Agentic AI for Enterprise Support](https://www.usefini.com/resource-library/fini-ai-ragless-agentic-ai-for-enterprise-support): Overview of Fini's RAGless agentic architecture for the enterprise.
+
+## Recognition
+
+- [CX Hall of Fame](https://www.usefini.com/hall-of-fame): Recognition for the customer experience leaders shaping modern support.

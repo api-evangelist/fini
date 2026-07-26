@@ -1,0 +1,19 @@
+generated: '2026-07-19'
+method: searched
+host: https://usefini.com
+documents:
+- path: /.well-known/security.txt
+  status: 404
+- path: /.well-known/openid-configuration
+  status: 404
+- path: /.well-known/oauth-authorization-server
+  status: 404
+- path: /.well-known/api-catalog
+  status: 404
+- path: /.well-known/ai-plugin.json
+  status: 404
+notes: >-
+  No /.well-known/ discovery documents were published on the usefini.com apex at probe time. A
+  public llms.txt IS served at https://usefini.com/llms.txt and https://docs.usefini.com/llms.txt
+  (captured under llms/). A responsible-disclosure program is published on the security portal
+  (see security/fini-vulnerability-disclosure.yml) but not as a /.well-known/security.txt file.
