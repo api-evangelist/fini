@@ -1,0 +1,130 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Fini AI Agents Knowledge Folders API",
+    "version": "v2"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Knowledge Folders",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Return the current knowledge-tree snapshot, optionally scoped to one agent.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api-prod.usefini.com/v2/hc-folders/public"
+          },
+          "docs": "Return the current knowledge-tree snapshot, optionally scoped to one agent. Requires the `read` scope."
+        },
+        {
+          "info": {
+            "name": "Create a folder in the knowledge tree.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api-prod.usefini.com/v2/hc-folders/public",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create a folder in the knowledge tree. Requires the `write` scope."
+        },
+        {
+          "info": {
+            "name": "Update a folder's title, description, or active state.",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://api-prod.usefini.com/v2/hc-folders/:id/public",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "The id path parameter."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Update a folder's title, description, or active state. Requires the `write` scope."
+        },
+        {
+          "info": {
+            "name": "Delete a folder from the knowledge tree.",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api-prod.usefini.com/v2/hc-folders/:id/public",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "The id path parameter."
+              }
+            ]
+          },
+          "docs": "Delete a folder from the knowledge tree. Requires the `write` scope."
+        },
+        {
+          "info": {
+            "name": "Move a folder under a different parent in the knowledge tree.",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://api-prod.usefini.com/v2/hc-folders/:id/move/public",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "The id path parameter."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Move a folder under a different parent in the knowledge tree. Requires the `write` scope."
+        },
+        {
+          "info": {
+            "name": "Assign or unassign folders to agents in bulk.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api-prod.usefini.com/v2/hc-bot-folder-junctions/public",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Assign or unassign folders to agents in bulk. Requires the `write` scope."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

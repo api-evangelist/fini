@@ -1,0 +1,85 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Fini AI Agents Prompts API",
+    "version": "v2"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Prompts",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List saved prompt versions for one agent, newest first.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api-prod.usefini.com/v2/bots/:id/hc-prompt/history/public",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "The id path parameter."
+              }
+            ]
+          },
+          "docs": "List saved prompt versions for one agent, newest first. Requires the `read` scope."
+        },
+        {
+          "info": {
+            "name": "Fetch the current merged prompts for one agent.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api-prod.usefini.com/v2/bots/:id/hc-prompt/public",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "The id path parameter."
+              }
+            ]
+          },
+          "docs": "Fetch the current merged prompts for one agent. Requires the `read` scope."
+        },
+        {
+          "info": {
+            "name": "Save a new prompt version for one agent.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api-prod.usefini.com/v2/bots/:id/hc-prompt",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "The id path parameter."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Save a new prompt version for one agent. Requires the `write` scope."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

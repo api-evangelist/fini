@@ -1,4 +1,3 @@
-# candidate MCP tool surface derived from openapi/fini-openapi.yml
 generated: '2026-07-19'
 method: derived
 status: candidate
@@ -181,3 +180,9 @@ tools:
 - name: updateTagGroup
   description: Update a custom tag group.
   source_operation: openapi/fini-openapi.yml#updateTagGroup
+deployment:
+  mode: none
+  verified: derived
+  tools: 56
+  checked: '2026-08-12'
+  source: catalog MCP census

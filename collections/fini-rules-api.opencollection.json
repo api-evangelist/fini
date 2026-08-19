@@ -1,0 +1,195 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Fini AI Agents Rules API",
+    "version": "v2"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Rules",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List rules in the workspace by type and draft state.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api-prod.usefini.com/v2/hc-rules/public"
+          },
+          "docs": "List rules in the workspace by type and draft state. Requires the `read` scope."
+        },
+        {
+          "info": {
+            "name": "Create a published rule.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api-prod.usefini.com/v2/hc-rules/public",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create a published rule. Requires the `write` scope."
+        },
+        {
+          "info": {
+            "name": "Generate a draft rule from instructions.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api-prod.usefini.com/v2/hc-rules/draft/public",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Generate a draft rule from instructions. Requires the `write` scope."
+        },
+        {
+          "info": {
+            "name": "Fetch one rule by ID with its full tree.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api-prod.usefini.com/v2/hc-rules/:id/public",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "The id path parameter."
+              }
+            ]
+          },
+          "docs": "Fetch one rule by ID with its full tree. Requires the `read` scope."
+        },
+        {
+          "info": {
+            "name": "Update an existing rule.",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://api-prod.usefini.com/v2/hc-rules/:id/public",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "The id path parameter."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Update an existing rule. Requires the `write` scope."
+        },
+        {
+          "info": {
+            "name": "Delete one rule.",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api-prod.usefini.com/v2/hc-rules/:id/public",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "The id path parameter."
+              }
+            ]
+          },
+          "docs": "Delete one rule. Requires the `write` scope."
+        },
+        {
+          "info": {
+            "name": "Create a copy of an existing rule.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api-prod.usefini.com/v2/hc-rules/:id/duplicate/public",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "The id path parameter."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create a copy of an existing rule. Requires the `write` scope."
+        },
+        {
+          "info": {
+            "name": "Publish a draft rule and assign it to one or more agents.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api-prod.usefini.com/v2/hc-rules/:id/publish/public",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "The id path parameter."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Publish a draft rule and assign it to one or more agents. Requires the `write` scope."
+        },
+        {
+          "info": {
+            "name": "Regenerate a draft rule using refinement instructions.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api-prod.usefini.com/v2/hc-rules/:id/refine/public",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "The id path parameter."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Regenerate a draft rule using refinement instructions. Requires the `write` scope."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

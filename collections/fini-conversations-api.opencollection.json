@@ -1,0 +1,149 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Fini AI Agents Conversations API",
+    "version": "v2"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Conversations",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Read all Fini conversations for your workspace, sorted newest first, with cursor pagination.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api-prod.usefini.com/v2/hc-interactions/public",
+            "params": [
+              {
+                "name": "since",
+                "value": "",
+                "type": "query",
+                "description": "Start of the time window in Unix epoch milliseconds. Defaults to the last 7 days. The since/until window cannot exceed 90 days."
+              },
+              {
+                "name": "until",
+                "value": "",
+                "type": "query",
+                "description": "End of the time window in Unix epoch milliseconds. Defaults to the current time."
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query",
+                "description": "Maximum number of conversations to return."
+              },
+              {
+                "name": "cursor",
+                "value": "",
+                "type": "query",
+                "description": "Conversation ID to paginate from. Pass the nextCursor or prevCursor from the previous response."
+              },
+              {
+                "name": "direction",
+                "value": "",
+                "type": "query",
+                "description": "Pagination direction. next moves to older conversations; previous moves toward newer ones (results are newest-first)."
+              },
+              {
+                "name": "agentId",
+                "value": "",
+                "type": "query",
+                "description": "Optional agent ID filter."
+              },
+              {
+                "name": "source",
+                "value": "",
+                "type": "query",
+                "description": "Optional comma-separated conversation sources (api, widget, ui, standalone, testsuite, replay, zendesk, intercom, front, hubspot, salesforce, gorgias, livechat, slack, discord, freshdesk, freshchat)."
+              },
+              {
+                "name": "channel",
+                "value": "",
+                "type": "query",
+                "description": "Optional comma-separated channel filter."
+              }
+            ]
+          },
+          "docs": "Read all Fini conversations for your workspace, sorted newest first, with cursor pagination. Requires the `read` scope."
+        },
+        {
+          "info": {
+            "name": "Delete up to 50 conversations in one request through the public Conversations API.",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api-prod.usefini.com/v2/hc-interactions/public"
+          },
+          "docs": "Delete up to 50 conversations in one request through the public Conversations API. Requires the `write` scope."
+        },
+        {
+          "info": {
+            "name": "Fetch one public conversation by ID.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api-prod.usefini.com/v2/hc-interactions/:id/public",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "The id path parameter."
+              }
+            ]
+          },
+          "docs": "Fetch one public conversation by ID. Requires the `read` scope."
+        },
+        {
+          "info": {
+            "name": "Delete one conversation by ID through the public Conversations API.",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api-prod.usefini.com/v2/hc-interactions/:id/public",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "The id path parameter."
+              }
+            ]
+          },
+          "docs": "Delete one conversation by ID through the public Conversations API. Requires the `write` scope."
+        },
+        {
+          "info": {
+            "name": "Send a message event into Fini and return the public events created for that submission.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api-prod.usefini.com/v2/hc-interactions/events/public",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Send a message event into Fini and return the public events created for that submission. Requires the `write` scope."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

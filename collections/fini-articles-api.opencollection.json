@@ -1,0 +1,176 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Fini AI Agents Articles API",
+    "version": "v2"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Articles",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List live articles, draft articles, or both.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api-prod.usefini.com/v2/hc-articles/public"
+          },
+          "docs": "List live articles, draft articles, or both. Requires the `read` scope."
+        },
+        {
+          "info": {
+            "name": "Create a live article or draft article directly in the workspace.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api-prod.usefini.com/v2/hc-articles/public",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create a live article or draft article directly in the workspace. Requires the `write` scope."
+        },
+        {
+          "info": {
+            "name": "Create a draft from an existing live article.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api-prod.usefini.com/v2/hc-articles/:id/draft/public",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "The id path parameter."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create a draft from an existing live article. Requires the `write` scope."
+        },
+        {
+          "info": {
+            "name": "Update an existing article.",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://api-prod.usefini.com/v2/hc-articles/:id/public",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "The id path parameter."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Update an existing article. Requires the `write` scope."
+        },
+        {
+          "info": {
+            "name": "Delete an article.",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api-prod.usefini.com/v2/hc-articles/:id/public",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "The id path parameter."
+              }
+            ]
+          },
+          "docs": "Delete an article. Requires the `write` scope."
+        },
+        {
+          "info": {
+            "name": "Fetch one or more articles by ID.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api-prod.usefini.com/v2/hc-articles/ids/public",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Fetch one or more articles by ID. Requires the `read` scope."
+        },
+        {
+          "info": {
+            "name": "Move an article into a different folder.",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://api-prod.usefini.com/v2/hc-articles/:id/move/public",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "The id path parameter."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Move an article into a different folder. Requires the `write` scope."
+        },
+        {
+          "info": {
+            "name": "Publish a draft article.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api-prod.usefini.com/v2/hc-articles/:id/publish/public",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "The id path parameter."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Publish a draft article. Requires the `write` scope."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

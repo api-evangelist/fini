@@ -1,0 +1,225 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Fini AI Agents Tags API",
+    "version": "v2"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Tags",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List the tags inside one tag group.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api-prod.usefini.com/v2/tag-groups/:id/tags/public",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "The id path parameter."
+              }
+            ]
+          },
+          "docs": "List the tags inside one tag group. Requires the `read` scope."
+        },
+        {
+          "info": {
+            "name": "Create a tag inside one tag group.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api-prod.usefini.com/v2/tag-groups/:id/tags/public",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "The id path parameter."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create a tag inside one tag group. Requires the `write` scope."
+        },
+        {
+          "info": {
+            "name": "Update one tag by tag ID.",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://api-prod.usefini.com/v2/tag-groups/:id/tags/public",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "The id path parameter."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Update one tag by tag ID. Requires the `write` scope."
+        },
+        {
+          "info": {
+            "name": "Delete one tag by tag ID.",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api-prod.usefini.com/v2/tag-groups/:id/tags/public",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "The id path parameter."
+              }
+            ]
+          },
+          "docs": "Delete one tag by tag ID. Requires the `write` scope."
+        },
+        {
+          "info": {
+            "name": "List the tag groups visible to your workspace API key, including Fini defaults and workspace-owned custom groups.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api-prod.usefini.com/v2/tag-groups/public"
+          },
+          "docs": "List the tag groups visible to your workspace API key, including Fini defaults and workspace-owned custom groups. Requires the `read` scope."
+        },
+        {
+          "info": {
+            "name": "Create a custom tag group.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api-prod.usefini.com/v2/tag-groups/public",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create a custom tag group. Requires the `write` scope."
+        },
+        {
+          "info": {
+            "name": "Fetch one tag group by ID.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api-prod.usefini.com/v2/tag-groups/:id/public",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "The id path parameter."
+              }
+            ]
+          },
+          "docs": "Fetch one tag group by ID. Requires the `read` scope."
+        },
+        {
+          "info": {
+            "name": "Update a custom tag group.",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://api-prod.usefini.com/v2/tag-groups/:id/public",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "The id path parameter."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Update a custom tag group. Requires the `write` scope."
+        },
+        {
+          "info": {
+            "name": "Delete a custom tag group.",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api-prod.usefini.com/v2/tag-groups/:id/public",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "The id path parameter."
+              }
+            ]
+          },
+          "docs": "Delete a custom tag group. Requires the `write` scope."
+        },
+        {
+          "info": {
+            "name": "Fetch one tag by ID.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api-prod.usefini.com/v2/tags/:id/public",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "The id path parameter."
+              }
+            ]
+          },
+          "docs": "Fetch one tag by ID. Requires the `read` scope."
+        },
+        {
+          "info": {
+            "name": "List tags across one or more tag groups as a flat array.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api-prod.usefini.com/v2/tag-groups/tags/public"
+          },
+          "docs": "List tags across one or more tag groups as a flat array. Requires the `read` scope."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

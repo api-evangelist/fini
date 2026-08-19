@@ -1,0 +1,99 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Fini AI Agents Knowledge API",
+    "version": "v2"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Knowledge",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Queue generate-and-save jobs for multiple source IDs in one request.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api-prod.usefini.com/v2/knowledge/public/bulk",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Queue generate-and-save jobs for multiple source IDs in one request. Requires the `write` scope."
+        },
+        {
+          "info": {
+            "name": "Check status for one or more background knowledge-generation jobs.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api-prod.usefini.com/v2/knowledge/public/jobs/status",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Check status for one or more background knowledge-generation jobs. Requires the `read` scope."
+        },
+        {
+          "info": {
+            "name": "Queue one knowledge-generation job from candidate text, with optional source or inbox linkage.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api-prod.usefini.com/v2/knowledge/public",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Queue one knowledge-generation job from candidate text, with optional source or inbox linkage. Requires the `write` scope."
+        },
+        {
+          "info": {
+            "name": "Generate a downloadable tree-import template file from an initialization prompt.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api-prod.usefini.com/v2/knowledge/public/tree/initialize",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Generate a downloadable tree-import template file from an initialization prompt. Requires the `write` scope."
+        },
+        {
+          "info": {
+            "name": "Upload a tree file and persist it into the workspace knowledge graph.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api-prod.usefini.com/v2/knowledge/public/tree/persist",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Upload a tree file and persist it into the workspace knowledge graph. Requires the `write` scope."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

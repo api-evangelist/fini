@@ -1,0 +1,35 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Fini AI Agents API",
+    "version": "v2"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Agents",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List the agents in the workspace tied to your API key so you can map names to bot IDs.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api-prod.usefini.com/v2/bots/public"
+          },
+          "docs": "List the agents in the workspace tied to your API key so you can map names to bot IDs. Requires the `read` scope."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

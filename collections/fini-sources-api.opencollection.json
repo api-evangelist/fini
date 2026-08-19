@@ -1,0 +1,152 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Fini AI Agents Sources API",
+    "version": "v2"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Sources",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Discover additional web URLs from one or more seed links before ingesting them as sources.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api-prod.usefini.com/v2/documents/public/deep-crawl/links",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Discover additional web URLs from one or more seed links before ingesting them as sources. Requires the `write` scope."
+        },
+        {
+          "info": {
+            "name": "Paginate through every source record in the workspace, with filters on source type, title, URL, linked article, and linked operation.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api-prod.usefini.com/v2/documents/public"
+          },
+          "docs": "Paginate through every source record in the workspace, with filters on source type, title, URL, linked article, and linked operation. Requires the `read` scope."
+        },
+        {
+          "info": {
+            "name": "Queue first-time ingestion or refresh jobs for web links or existing source IDs.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api-prod.usefini.com/v2/documents/public",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Queue first-time ingestion or refresh jobs for web links or existing source IDs. Requires the `write` scope."
+        },
+        {
+          "info": {
+            "name": "Delete source records and optionally delete the linked Articles in the same request.",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api-prod.usefini.com/v2/documents/public"
+          },
+          "docs": "Delete source records and optionally delete the linked Articles in the same request. Requires the `write` scope."
+        },
+        {
+          "info": {
+            "name": "Fetch one source record by ID.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api-prod.usefini.com/v2/documents/public/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "The id path parameter."
+              }
+            ]
+          },
+          "docs": "Fetch one source record by ID. Requires the `read` scope."
+        },
+        {
+          "info": {
+            "name": "Re-fetch existing source IDs so Fini can detect upstream changes and update linked knowledge.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api-prod.usefini.com/v2/documents/public/refresh",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Re-fetch existing source IDs so Fini can detect upstream changes and update linked knowledge. Requires the `write` scope."
+        },
+        {
+          "info": {
+            "name": "Discover importable resources from a connected provider. Step 1 of the provider import flow.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api-prod.usefini.com/v2/documents/public/resources/:provider",
+            "params": [
+              {
+                "name": "provider",
+                "value": "",
+                "type": "path",
+                "description": "The provider path parameter."
+              }
+            ]
+          },
+          "docs": "Discover importable resources from a connected provider. Step 1 of the provider import flow. Requires the `read` scope."
+        },
+        {
+          "info": {
+            "name": "Create or update source records from provider resources. Step 2 of the connected-source flow.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api-prod.usefini.com/v2/documents/public/resources/:provider",
+            "params": [
+              {
+                "name": "provider",
+                "value": "",
+                "type": "path",
+                "description": "The provider path parameter."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create or update source records from provider resources. Step 2 of the connected-source flow. Requires the `write` scope."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
