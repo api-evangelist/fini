@@ -1,6 +1,6 @@
-openapi: 3.1.0
+openapi: 3.2.0
 info:
-  title: Fini AI Agents Rules API
+  title: Fini AI Rules API
   version: v2
   description: Public REST API for Fini AI, the self-improving AI agent for enterprise customer support. Manage agents, conversations, knowledge (sources, articles, folders), rules, tags, and prompts, and drive the agent loop via Generate Answer. Structure captured by API Evangelist from the published Fini API reference; not an official Fini-published OpenAPI.
   contact:
@@ -18,7 +18,7 @@ paths:
   /hc-rules/public:
     post:
       operationId: createRule
-      summary: Create a published rule.
+      summary: Create a published rule
       tags:
       - Rules
       description: Create a published rule. Requires the `write` scope.
@@ -42,7 +42,7 @@ paths:
         description: See the Fini API reference for the request body schema.
     get:
       operationId: listRules
-      summary: List rules in the workspace by type and draft state.
+      summary: List rules in the workspace by type and draft state
       tags:
       - Rules
       description: List rules in the workspace by type and draft state. Requires the `read` scope.
@@ -60,7 +60,7 @@ paths:
   /hc-rules/draft/public:
     post:
       operationId: createRuleDraft
-      summary: Generate a draft rule from instructions.
+      summary: Generate a draft rule from instructions
       tags:
       - Rules
       description: Generate a draft rule from instructions. Requires the `write` scope.
@@ -85,7 +85,7 @@ paths:
   /hc-rules/{id}/public:
     delete:
       operationId: deleteRule
-      summary: Delete one rule.
+      summary: Delete one rule
       tags:
       - Rules
       description: Delete one rule. Requires the `write` scope.
@@ -111,7 +111,7 @@ paths:
         description: The id path parameter.
     get:
       operationId: getRule
-      summary: Fetch one rule by ID with its full tree.
+      summary: Fetch one rule by ID with its full tree
       tags:
       - Rules
       description: Fetch one rule by ID with its full tree. Requires the `read` scope.
@@ -137,7 +137,7 @@ paths:
         description: The id path parameter.
     patch:
       operationId: updateRule
-      summary: Update an existing rule.
+      summary: Update an existing rule
       tags:
       - Rules
       description: Update an existing rule. Requires the `write` scope.
@@ -171,7 +171,7 @@ paths:
   /hc-rules/{id}/duplicate/public:
     post:
       operationId: duplicateRule
-      summary: Create a copy of an existing rule.
+      summary: Create a copy of an existing rule
       tags:
       - Rules
       description: Create a copy of an existing rule. Requires the `write` scope.
@@ -205,7 +205,7 @@ paths:
   /hc-rules/{id}/publish/public:
     post:
       operationId: publishRuleDraft
-      summary: Publish a draft rule and assign it to one or more agents.
+      summary: Publish a draft rule and assign it to one or more agents
       tags:
       - Rules
       description: Publish a draft rule and assign it to one or more agents. Requires the `write` scope.
@@ -239,7 +239,7 @@ paths:
   /hc-rules/{id}/refine/public:
     post:
       operationId: refineRuleDraft
-      summary: Regenerate a draft rule using refinement instructions.
+      summary: Regenerate a draft rule using refinement instructions
       tags:
       - Rules
       description: Regenerate a draft rule using refinement instructions. Requires the `write` scope.
@@ -272,26 +272,6 @@ paths:
         description: See the Fini API reference for the request body schema.
 components:
   responses:
-    Forbidden:
-      description: API key lacks the required scope.
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/Error'
-          example:
-            statusCode: 403
-            message: API key does not have the required scope for this operation
-            error: Forbidden
-    Unauthorized:
-      description: Missing or invalid API key.
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/Error'
-          example:
-            statusCode: 401
-            message: Unauthorized
-            error: Unauthorized
     ServerError:
       description: Internal server error.
       content:
@@ -302,6 +282,26 @@ components:
             statusCode: 500
             message: Internal Server Error
             error: Internal Server Error
+    Unauthorized:
+      description: Missing or invalid API key.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+          example:
+            statusCode: 401
+            message: Unauthorized
+            error: Unauthorized
+    Forbidden:
+      description: API key lacks the required scope.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+          example:
+            statusCode: 403
+            message: API key does not have the required scope for this operation
+            error: Forbidden
     NotFound:
       description: Resource not found.
       content:

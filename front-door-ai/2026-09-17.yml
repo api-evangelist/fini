@@ -1,0 +1,30 @@
+# Front Door AI Index — fini — 2026-09-17
+# AI vocabulary counted on the provider's root page. Generated; do not edit.
+# `score` is null unless ownership is `own` — see front_door_ai.py.
+front_door_ai:
+  slug: fini
+  lexicon_version: '1.0'
+  probed_at: '2026-09-17'
+  host: usefini.com
+  final_host: www.usefini.com
+  ownership: own
+  owner: fini
+  shares_host_with: null
+  inherited_from: null
+  verdict: scored
+  score: 50
+  host_score: 50
+  density: 17.81
+  words: 2807
+  tiers:
+    agentic: 20
+    core: 30
+    model: 0
+  ambiguous: 34
+  top_terms:
+    AI: 30
+    agent: 28
+    AI agent: 12
+    automation: 6
+    chatbot: 5
+    agentic: 3

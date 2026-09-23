@@ -1,6 +1,6 @@
-openapi: 3.1.0
+openapi: 3.2.0
 info:
-  title: Fini AI Agents Knowledge API
+  title: Fini AI Knowledge API
   version: v2
   description: Public REST API for Fini AI, the self-improving AI agent for enterprise customer support. Manage agents, conversations, knowledge (sources, articles, folders), rules, tags, and prompts, and drive the agent loop via Generate Answer. Structure captured by API Evangelist from the published Fini API reference; not an official Fini-published OpenAPI.
   contact:
@@ -18,7 +18,7 @@ paths:
   /knowledge/public/bulk:
     post:
       operationId: bulkGenerateKnowledge
-      summary: Queue generate-and-save jobs for multiple source IDs in one request.
+      summary: Queue generate-and-save jobs for multiple source IDs in one request
       tags:
       - Knowledge
       description: Queue generate-and-save jobs for multiple source IDs in one request. Requires the `write` scope.
@@ -43,7 +43,7 @@ paths:
   /knowledge/public/jobs/status:
     post:
       operationId: checkKnowledgeJobs
-      summary: Check status for one or more background knowledge-generation jobs.
+      summary: Check status for one or more background knowledge-generation jobs
       tags:
       - Knowledge
       description: Check status for one or more background knowledge-generation jobs. Requires the `read` scope.
@@ -68,7 +68,7 @@ paths:
   /knowledge/public:
     post:
       operationId: generateKnowledge
-      summary: Queue one knowledge-generation job from candidate text, with optional source or inbox linkage.
+      summary: Queue one knowledge-generation job from candidate text, with optional source or…
       tags:
       - Knowledge
       description: Queue one knowledge-generation job from candidate text, with optional source or inbox linkage. Requires the `write` scope.
@@ -93,7 +93,7 @@ paths:
   /knowledge/public/tree/initialize:
     post:
       operationId: initializeKnowledgeFolders
-      summary: Generate a downloadable tree-import template file from an initialization prompt.
+      summary: Generate a downloadable tree-import template file from an initialization prompt
       tags:
       - Knowledge
       description: Generate a downloadable tree-import template file from an initialization prompt. Requires the `write` scope.
@@ -118,7 +118,7 @@ paths:
   /knowledge/public/tree/persist:
     post:
       operationId: persistKnowledgeFolders
-      summary: Upload a tree file and persist it into the workspace knowledge graph.
+      summary: Upload a tree file and persist it into the workspace knowledge graph
       tags:
       - Knowledge
       description: Upload a tree file and persist it into the workspace knowledge graph. Requires the `write` scope.
@@ -152,16 +152,6 @@ components:
             statusCode: 403
             message: API key does not have the required scope for this operation
             error: Forbidden
-    Unauthorized:
-      description: Missing or invalid API key.
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/Error'
-          example:
-            statusCode: 401
-            message: Unauthorized
-            error: Unauthorized
     ServerError:
       description: Internal server error.
       content:
@@ -172,6 +162,16 @@ components:
             statusCode: 500
             message: Internal Server Error
             error: Internal Server Error
+    Unauthorized:
+      description: Missing or invalid API key.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+          example:
+            statusCode: 401
+            message: Unauthorized
+            error: Unauthorized
   schemas:
     Error:
       type: object

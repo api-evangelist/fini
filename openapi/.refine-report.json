@@ -1,15 +1,7 @@
 {
   "provider": "fini",
   "sources": [
-    "fini-agents-api-openapi.yml",
-    "fini-articles-api-openapi.yml",
-    "fini-conversations-api-openapi.yml",
-    "fini-knowledge-api-openapi.yml",
-    "fini-knowledge-folders-api-openapi.yml",
-    "fini-prompts-api-openapi.yml",
-    "fini-rules-api-openapi.yml",
-    "fini-sources-api-openapi.yml",
-    "fini-tags-api-openapi.yml"
+    "_original/fini-openapi.yml"
   ],
   "outputs": [
     "fini-agents-api-openapi.yml",
@@ -25,6 +17,20 @@
   "archived": [],
   "errors": [],
   "warnings": [],
-  "notes": [],
-  "skipped": []
+  "notes": [
+    "sourced from openapi/_original/ (1 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "fini-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
+    "apis.yml register: already-registered"
+  ],
+  "skipped": [
+    "fini-agents-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "fini-articles-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "fini-conversations-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "fini-knowledge-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "fini-knowledge-folders-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "fini-prompts-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "fini-rules-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "fini-sources-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "fini-tags-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
 }

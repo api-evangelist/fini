@@ -1,6 +1,6 @@
-openapi: 3.1.0
+openapi: 3.2.0
 info:
-  title: Fini AI Agents Knowledge Folders API
+  title: Fini AI Knowledge Folders API
   version: v2
   description: Public REST API for Fini AI, the self-improving AI agent for enterprise customer support. Manage agents, conversations, knowledge (sources, articles, folders), rules, tags, and prompts, and drive the agent loop via Generate Answer. Structure captured by API Evangelist from the published Fini API reference; not an official Fini-published OpenAPI.
   contact:
@@ -18,7 +18,7 @@ paths:
   /hc-folders/public:
     post:
       operationId: createKnowledgeFolder
-      summary: Create a folder in the knowledge tree.
+      summary: Create a folder in the knowledge tree
       tags:
       - Knowledge Folders
       description: Create a folder in the knowledge tree. Requires the `write` scope.
@@ -42,7 +42,7 @@ paths:
         description: See the Fini API reference for the request body schema.
     get:
       operationId: getKnowledgeFolders
-      summary: Return the current knowledge-tree snapshot, optionally scoped to one agent.
+      summary: Return the current knowledge-tree snapshot, optionally scoped to one agent
       tags:
       - Knowledge Folders
       description: Return the current knowledge-tree snapshot, optionally scoped to one agent. Requires the `read` scope.
@@ -60,7 +60,7 @@ paths:
   /hc-folders/{id}/public:
     delete:
       operationId: deleteKnowledgeFolder
-      summary: Delete a folder from the knowledge tree.
+      summary: Delete a folder from the knowledge tree
       tags:
       - Knowledge Folders
       description: Delete a folder from the knowledge tree. Requires the `write` scope.
@@ -86,7 +86,7 @@ paths:
         description: The id path parameter.
     put:
       operationId: updateKnowledgeFolder
-      summary: Update a folder's title, description, or active state.
+      summary: Update a folder's title, description, or active state
       tags:
       - Knowledge Folders
       description: Update a folder's title, description, or active state. Requires the `write` scope.
@@ -120,7 +120,7 @@ paths:
   /hc-folders/{id}/move/public:
     put:
       operationId: moveKnowledgeFolder
-      summary: Move a folder under a different parent in the knowledge tree.
+      summary: Move a folder under a different parent in the knowledge tree
       tags:
       - Knowledge Folders
       description: Move a folder under a different parent in the knowledge tree. Requires the `write` scope.
@@ -154,7 +154,7 @@ paths:
   /hc-bot-folder-junctions/public:
     post:
       operationId: assignKnowledgeToAgents
-      summary: Assign or unassign folders to agents in bulk.
+      summary: Assign or unassign folders to agents in bulk
       tags:
       - Knowledge Folders
       description: Assign or unassign folders to agents in bulk. Requires the `write` scope.
@@ -178,26 +178,6 @@ paths:
         description: See the Fini API reference for the request body schema.
 components:
   responses:
-    Forbidden:
-      description: API key lacks the required scope.
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/Error'
-          example:
-            statusCode: 403
-            message: API key does not have the required scope for this operation
-            error: Forbidden
-    Unauthorized:
-      description: Missing or invalid API key.
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/Error'
-          example:
-            statusCode: 401
-            message: Unauthorized
-            error: Unauthorized
     ServerError:
       description: Internal server error.
       content:
@@ -208,6 +188,26 @@ components:
             statusCode: 500
             message: Internal Server Error
             error: Internal Server Error
+    Unauthorized:
+      description: Missing or invalid API key.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+          example:
+            statusCode: 401
+            message: Unauthorized
+            error: Unauthorized
+    Forbidden:
+      description: API key lacks the required scope.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+          example:
+            statusCode: 403
+            message: API key does not have the required scope for this operation
+            error: Forbidden
     NotFound:
       description: Resource not found.
       content:

@@ -1,6 +1,6 @@
-openapi: 3.1.0
+openapi: 3.2.0
 info:
-  title: Fini AI Agents Articles API
+  title: Fini AI Articles API
   version: v2
   description: Public REST API for Fini AI, the self-improving AI agent for enterprise customer support. Manage agents, conversations, knowledge (sources, articles, folders), rules, tags, and prompts, and drive the agent loop via Generate Answer. Structure captured by API Evangelist from the published Fini API reference; not an official Fini-published OpenAPI.
   contact:
@@ -18,7 +18,7 @@ paths:
   /hc-articles/public:
     post:
       operationId: createArticle
-      summary: Create a live article or draft article directly in the workspace.
+      summary: Create a live article or draft article directly in the workspace
       tags:
       - Articles
       description: Create a live article or draft article directly in the workspace. Requires the `write` scope.
@@ -42,7 +42,7 @@ paths:
         description: See the Fini API reference for the request body schema.
     get:
       operationId: listArticles
-      summary: List live articles, draft articles, or both.
+      summary: List live articles, draft articles, or both
       tags:
       - Articles
       description: List live articles, draft articles, or both. Requires the `read` scope.
@@ -60,7 +60,7 @@ paths:
   /hc-articles/{id}/draft/public:
     post:
       operationId: createArticleDraft
-      summary: Create a draft from an existing live article.
+      summary: Create a draft from an existing live article
       tags:
       - Articles
       description: Create a draft from an existing live article. Requires the `write` scope.
@@ -94,7 +94,7 @@ paths:
   /hc-articles/{id}/public:
     delete:
       operationId: deleteArticle
-      summary: Delete an article.
+      summary: Delete an article
       tags:
       - Articles
       description: Delete an article. Requires the `write` scope.
@@ -120,7 +120,7 @@ paths:
         description: The id path parameter.
     put:
       operationId: updateArticle
-      summary: Update an existing article.
+      summary: Update an existing article
       tags:
       - Articles
       description: Update an existing article. Requires the `write` scope.
@@ -154,7 +154,7 @@ paths:
   /hc-articles/ids/public:
     post:
       operationId: getArticlesByIds
-      summary: Fetch one or more articles by ID.
+      summary: Fetch one or more articles by ID
       tags:
       - Articles
       description: Fetch one or more articles by ID. Requires the `read` scope.
@@ -179,7 +179,7 @@ paths:
   /hc-articles/{id}/move/public:
     put:
       operationId: moveArticle
-      summary: Move an article into a different folder.
+      summary: Move an article into a different folder
       tags:
       - Articles
       description: Move an article into a different folder. Requires the `write` scope.
@@ -213,7 +213,7 @@ paths:
   /hc-articles/{id}/publish/public:
     post:
       operationId: publishArticleDraft
-      summary: Publish a draft article.
+      summary: Publish a draft article
       tags:
       - Articles
       description: Publish a draft article. Requires the `write` scope.
@@ -246,26 +246,6 @@ paths:
         description: See the Fini API reference for the request body schema.
 components:
   responses:
-    Forbidden:
-      description: API key lacks the required scope.
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/Error'
-          example:
-            statusCode: 403
-            message: API key does not have the required scope for this operation
-            error: Forbidden
-    Unauthorized:
-      description: Missing or invalid API key.
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/Error'
-          example:
-            statusCode: 401
-            message: Unauthorized
-            error: Unauthorized
     ServerError:
       description: Internal server error.
       content:
@@ -276,6 +256,26 @@ components:
             statusCode: 500
             message: Internal Server Error
             error: Internal Server Error
+    Unauthorized:
+      description: Missing or invalid API key.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+          example:
+            statusCode: 401
+            message: Unauthorized
+            error: Unauthorized
+    Forbidden:
+      description: API key lacks the required scope.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+          example:
+            statusCode: 403
+            message: API key does not have the required scope for this operation
+            error: Forbidden
     NotFound:
       description: Resource not found.
       content:

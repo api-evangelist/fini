@@ -1,6 +1,6 @@
-openapi: 3.1.0
+openapi: 3.2.0
 info:
-  title: Fini AI Agents Conversations API
+  title: Fini AI Conversations API
   version: v2
   description: Public REST API for Fini AI, the self-improving AI agent for enterprise customer support. Manage agents, conversations, knowledge (sources, articles, folders), rules, tags, and prompts, and drive the agent loop via Generate Answer. Structure captured by API Evangelist from the published Fini API reference; not an official Fini-published OpenAPI.
   contact:
@@ -18,7 +18,7 @@ paths:
   /hc-interactions/public:
     delete:
       operationId: bulkDeleteConversations
-      summary: Delete up to 50 conversations in one request through the public Conversations API.
+      summary: Delete up to 50 conversations in one request through the public Conversations…
       tags:
       - Conversations
       description: Delete up to 50 conversations in one request through the public Conversations API. Requires the `write` scope.
@@ -35,7 +35,7 @@ paths:
           $ref: '#/components/responses/ServerError'
     get:
       operationId: listConversations
-      summary: Read all Fini conversations for your workspace, sorted newest first, with cursor pagination.
+      summary: Read all Fini conversations for your workspace, sorted newest first, with…
       tags:
       - Conversations
       description: Read all Fini conversations for your workspace, sorted newest first, with cursor pagination. Requires the `read` scope.
@@ -109,7 +109,7 @@ paths:
   /hc-interactions/{id}/public:
     delete:
       operationId: deleteConversation
-      summary: Delete one conversation by ID through the public Conversations API.
+      summary: Delete one conversation by ID through the public Conversations API
       tags:
       - Conversations
       description: Delete one conversation by ID through the public Conversations API. Requires the `write` scope.
@@ -135,7 +135,7 @@ paths:
         description: The id path parameter.
     get:
       operationId: getConversation
-      summary: Fetch one public conversation by ID.
+      summary: Fetch one public conversation by ID
       tags:
       - Conversations
       description: Fetch one public conversation by ID. Requires the `read` scope.
@@ -162,7 +162,7 @@ paths:
   /hc-interactions/events/public:
     post:
       operationId: generateAnswer
-      summary: Send a message event into Fini and return the public events created for that submission.
+      summary: Send a message event into Fini and return the public events created for that…
       tags:
       - Conversations
       description: Send a message event into Fini and return the public events created for that submission. Requires the `write` scope.
@@ -186,26 +186,6 @@ paths:
         description: See the Fini API reference for the request body schema.
 components:
   responses:
-    Forbidden:
-      description: API key lacks the required scope.
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/Error'
-          example:
-            statusCode: 403
-            message: API key does not have the required scope for this operation
-            error: Forbidden
-    Unauthorized:
-      description: Missing or invalid API key.
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/Error'
-          example:
-            statusCode: 401
-            message: Unauthorized
-            error: Unauthorized
     ServerError:
       description: Internal server error.
       content:
@@ -216,6 +196,26 @@ components:
             statusCode: 500
             message: Internal Server Error
             error: Internal Server Error
+    Unauthorized:
+      description: Missing or invalid API key.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+          example:
+            statusCode: 401
+            message: Unauthorized
+            error: Unauthorized
+    Forbidden:
+      description: API key lacks the required scope.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+          example:
+            statusCode: 403
+            message: API key does not have the required scope for this operation
+            error: Forbidden
     NotFound:
       description: Resource not found.
       content:

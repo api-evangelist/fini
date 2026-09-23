@@ -1,6 +1,6 @@
-openapi: 3.1.0
+openapi: 3.2.0
 info:
-  title: Fini AI Agents Sources API
+  title: Fini AI Sources API
   version: v2
   description: Public REST API for Fini AI, the self-improving AI agent for enterprise customer support. Manage agents, conversations, knowledge (sources, articles, folders), rules, tags, and prompts, and drive the agent loop via Generate Answer. Structure captured by API Evangelist from the published Fini API reference; not an official Fini-published OpenAPI.
   contact:
@@ -18,7 +18,7 @@ paths:
   /documents/public/deep-crawl/links:
     post:
       operationId: crawlLinks
-      summary: Discover additional web URLs from one or more seed links before ingesting them as sources.
+      summary: Discover additional web URLs from one or more seed links before ingesting them…
       tags:
       - Sources
       description: Discover additional web URLs from one or more seed links before ingesting them as sources. Requires the `write` scope.
@@ -43,7 +43,7 @@ paths:
   /documents/public:
     delete:
       operationId: deleteSources
-      summary: Delete source records and optionally delete the linked Articles in the same request.
+      summary: Delete source records and optionally delete the linked Articles in the same…
       tags:
       - Sources
       description: Delete source records and optionally delete the linked Articles in the same request. Requires the `write` scope.
@@ -60,7 +60,7 @@ paths:
           $ref: '#/components/responses/ServerError'
     post:
       operationId: ingestSources
-      summary: Queue first-time ingestion or refresh jobs for web links or existing source IDs.
+      summary: Queue first-time ingestion or refresh jobs for web links or existing source IDs
       tags:
       - Sources
       description: Queue first-time ingestion or refresh jobs for web links or existing source IDs. Requires the `write` scope.
@@ -84,7 +84,7 @@ paths:
         description: See the Fini API reference for the request body schema.
     get:
       operationId: listSources
-      summary: Paginate through every source record in the workspace, with filters on source type, title, URL, linked article, and linked operation.
+      summary: Paginate through every source record in the workspace, with filters on source…
       tags:
       - Sources
       description: Paginate through every source record in the workspace, with filters on source type, title, URL, linked article, and linked operation. Requires the `read` scope.
@@ -102,7 +102,7 @@ paths:
   /documents/public/{id}:
     get:
       operationId: getSource
-      summary: Fetch one source record by ID.
+      summary: Fetch one source record by ID
       tags:
       - Sources
       description: Fetch one source record by ID. Requires the `read` scope.
@@ -129,7 +129,7 @@ paths:
   /documents/public/refresh:
     post:
       operationId: refreshSources
-      summary: Re-fetch existing source IDs so Fini can detect upstream changes and update linked knowledge.
+      summary: Re-fetch existing source IDs so Fini can detect upstream changes and update…
       tags:
       - Sources
       description: Re-fetch existing source IDs so Fini can detect upstream changes and update linked knowledge. Requires the `write` scope.
@@ -154,7 +154,7 @@ paths:
   /documents/public/resources/{provider}:
     get:
       operationId: listProviderResources
-      summary: Discover importable resources from a connected provider. Step 1 of the provider import flow.
+      summary: Discover importable resources from a connected provider.
       tags:
       - Sources
       description: Discover importable resources from a connected provider. Step 1 of the provider import flow. Requires the `read` scope.
@@ -180,7 +180,7 @@ paths:
         description: The provider path parameter.
     post:
       operationId: registerProviderResources
-      summary: Create or update source records from provider resources. Step 2 of the connected-source flow.
+      summary: Create or update source records from provider resources.
       tags:
       - Sources
       description: Create or update source records from provider resources. Step 2 of the connected-source flow. Requires the `write` scope.
@@ -213,26 +213,6 @@ paths:
         description: See the Fini API reference for the request body schema.
 components:
   responses:
-    Forbidden:
-      description: API key lacks the required scope.
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/Error'
-          example:
-            statusCode: 403
-            message: API key does not have the required scope for this operation
-            error: Forbidden
-    Unauthorized:
-      description: Missing or invalid API key.
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/Error'
-          example:
-            statusCode: 401
-            message: Unauthorized
-            error: Unauthorized
     ServerError:
       description: Internal server error.
       content:
@@ -243,6 +223,26 @@ components:
             statusCode: 500
             message: Internal Server Error
             error: Internal Server Error
+    Unauthorized:
+      description: Missing or invalid API key.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+          example:
+            statusCode: 401
+            message: Unauthorized
+            error: Unauthorized
+    Forbidden:
+      description: API key lacks the required scope.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+          example:
+            statusCode: 403
+            message: API key does not have the required scope for this operation
+            error: Forbidden
     NotFound:
       description: Resource not found.
       content:
