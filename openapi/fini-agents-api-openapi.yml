@@ -35,6 +35,16 @@ paths:
           $ref: '#/components/responses/ServerError'
 components:
   responses:
+    Unauthorized:
+      description: Missing or invalid API key.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+          example:
+            statusCode: 401
+            message: Unauthorized
+            error: Unauthorized
     Forbidden:
       description: API key lacks the required scope.
       content:
@@ -55,16 +65,6 @@ components:
             statusCode: 500
             message: Internal Server Error
             error: Internal Server Error
-    Unauthorized:
-      description: Missing or invalid API key.
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/Error'
-          example:
-            statusCode: 401
-            message: Unauthorized
-            error: Unauthorized
   schemas:
     Error:
       type: object

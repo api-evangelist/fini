@@ -329,16 +329,6 @@ components:
             statusCode: 401
             message: Unauthorized
             error: Unauthorized
-    Forbidden:
-      description: API key lacks the required scope.
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/Error'
-          example:
-            statusCode: 403
-            message: API key does not have the required scope for this operation
-            error: Forbidden
     NotFound:
       description: Resource not found.
       content:
@@ -349,6 +339,16 @@ components:
             statusCode: 404
             message: Not Found
             error: Not Found
+    Forbidden:
+      description: API key lacks the required scope.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+          example:
+            statusCode: 403
+            message: API key does not have the required scope for this operation
+            error: Forbidden
   schemas:
     Error:
       type: object
