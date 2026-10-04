@@ -142,16 +142,6 @@ paths:
         description: See the Fini API reference for the request body schema.
 components:
   responses:
-    Forbidden:
-      description: API key lacks the required scope.
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/Error'
-          example:
-            statusCode: 403
-            message: API key does not have the required scope for this operation
-            error: Forbidden
     ServerError:
       description: Internal server error.
       content:
@@ -162,6 +152,16 @@ components:
             statusCode: 500
             message: Internal Server Error
             error: Internal Server Error
+    Forbidden:
+      description: API key lacks the required scope.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+          example:
+            statusCode: 403
+            message: API key does not have the required scope for this operation
+            error: Forbidden
     Unauthorized:
       description: Missing or invalid API key.
       content:
