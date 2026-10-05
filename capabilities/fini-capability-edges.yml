@@ -1,0 +1,37 @@
+slug: fini
+provider: Fini
+generated_by: planning/capability-mapping/scripts/classify_capabilities.py
+model: claude-opus-5
+frame:
+- Software & Technology
+min_confidence: 0.7
+capability_model:
+  source: https://github.com/vincentmakes/turbo-ea-capabilities
+  license: CC-BY-4.0
+  attribution: Turbo EA Capabilities by Vincent Verdet — Turbo EA, https://github.com/vincentmakes/turbo-ea-capabilities,
+    CC BY 4.0
+  notice: NOTICE
+edge_count: 2
+edges:
+- tag: Articles
+  spec_file: fini-articles-api-openapi.yml
+  capability_id: BC-430.40
+  capability_id_l1: BC-430
+  capability_name: Self-Service Management
+  confidence: 0.8
+  evidence: '"Create a live article or draft article", "Publish a draft article", "Move an article into
+    a different folder"; paths /hc-articles (help-centre articles)'
+  reason: Full lifecycle management of help-centre articles backing an AI support agent — this is knowledge
+    base / self-service content for customer support. Could alternatively be read as general Knowledge
+    Management, but the help-centre support context points to self-service.
+- tag: Conversations
+  spec_file: fini-conversations-api-openapi.yml
+  capability_id: BC-430.10
+  capability_id_l1: BC-430
+  capability_name: Customer Inquiry Management
+  confidence: 0.8
+  evidence: '"Read all Fini conversations for your workspace", "Send a message event into Fini and return
+    the public events created" (generateAnswer)'
+  reason: 'Customer support conversation records and answer generation for inbound support messages —
+    inbound contact handling and resolution. Vendor context: "AI agent for enterprise customer support"
+    resolving support tickets.'
