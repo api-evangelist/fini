@@ -309,16 +309,6 @@ paths:
           $ref: '#/components/responses/ServerError'
 components:
   responses:
-    NotFound:
-      description: Resource not found.
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/Error'
-          example:
-            statusCode: 404
-            message: Not Found
-            error: Not Found
     ServerError:
       description: Internal server error.
       content:
@@ -349,6 +339,16 @@ components:
             statusCode: 401
             message: Unauthorized
             error: Unauthorized
+    NotFound:
+      description: Resource not found.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+          example:
+            statusCode: 404
+            message: Not Found
+            error: Not Found
   schemas:
     Error:
       type: object

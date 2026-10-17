@@ -142,6 +142,16 @@ paths:
         description: See the Fini API reference for the request body schema.
 components:
   responses:
+    Unauthorized:
+      description: Missing or invalid API key.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+          example:
+            statusCode: 401
+            message: Unauthorized
+            error: Unauthorized
     ServerError:
       description: Internal server error.
       content:
@@ -162,16 +172,6 @@ components:
             statusCode: 403
             message: API key does not have the required scope for this operation
             error: Forbidden
-    Unauthorized:
-      description: Missing or invalid API key.
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/Error'
-          example:
-            statusCode: 401
-            message: Unauthorized
-            error: Unauthorized
   schemas:
     Error:
       type: object
