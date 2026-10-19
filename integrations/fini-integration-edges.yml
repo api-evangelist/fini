@@ -1,7 +1,9 @@
 generated: '2026-10-13'
 method: searched
 checked:
+- gorgias/integrations/gorgias-integration-edges.yml
 - https://azuremarketplace.microsoft.com/
+- zendesk/integrations/zendesk-integration-edges.yml
 marketplace_apps: []
 edges:
 - partner_name: Microsoft Azure Marketplace
@@ -19,3 +21,39 @@ edges:
   seller_name: Fini AI
   detected_by: sweep-cloud-marketplaces.py
   detected: '2026-10-13'
+- partner_name: Gorgias (own)
+  partner: gorgias
+  partner_match: mirror
+  mirror_match: domain
+  type: marketplace
+  relationship: platform-app
+  direction: third-party
+  channel: partner-built
+  marketplace: own
+  evidence: https://www.gorgias.com/apps/fini-ai
+  mirror_of: gorgias/integrations/gorgias-integration-edges.yml
+  apps:
+  - Fini AI
+  listing_count: 1
+  detected: '2026-10-19'
+  detected_by: mirror-platform-listings.py
+- partner_name: Zendesk (own)
+  partner: zendesk
+  partner_match: mirror
+  mirror_match: domain
+  type: marketplace
+  relationship: platform-app
+  direction: third-party
+  channel: partner-built
+  marketplace: own
+  evidence: https://www.zendesk.com/marketplace/apps/support/1139199/fini/
+  mirror_of: zendesk/integrations/zendesk-integration-edges.yml
+  apps:
+  - Fini
+  listing_count: 1
+  detected: '2026-10-19'
+  detected_by: mirror-platform-listings.py
+  category: AI and Bots
+source:
+- gorgias/integrations/gorgias-integration-edges.yml
+- zendesk/integrations/zendesk-integration-edges.yml
