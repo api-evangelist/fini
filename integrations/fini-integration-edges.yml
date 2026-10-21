@@ -4,6 +4,7 @@ checked:
 - gorgias/integrations/gorgias-integration-edges.yml
 - https://azuremarketplace.microsoft.com/
 - zendesk/integrations/zendesk-integration-edges.yml
+- hubspot/integrations/hubspot-integration-edges.yml
 marketplace_apps: []
 edges:
 - partner_name: Microsoft Azure Marketplace
@@ -54,6 +55,23 @@ edges:
   detected: '2026-10-19'
   detected_by: mirror-platform-listings.py
   category: AI and Bots
+- partner_name: HubSpot (own)
+  partner: hubspot
+  partner_match: mirror
+  mirror_match: domain
+  type: marketplace
+  relationship: platform-app
+  direction: third-party
+  channel: partner-built
+  marketplace: own
+  evidence: https://ecosystem.hubspot.com/marketplace/listing/fini-ai-3590901
+  mirror_of: hubspot/integrations/hubspot-integration-edges.yml
+  apps:
+  - Fini AI
+  listing_count: 1
+  detected: '2026-10-21'
+  detected_by: mirror-platform-listings.py
+  category: HELP_DESK
 source:
 - gorgias/integrations/gorgias-integration-edges.yml
 - zendesk/integrations/zendesk-integration-edges.yml

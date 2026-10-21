@@ -40,3 +40,16 @@
   relationship: platform-app
   status: not-a-workflow
   arazzo: null
+- slug: fini-hubspot-own
+  label: HubSpot (own)
+  partner: hubspot
+  partner_name: HubSpot (own)
+  category: HELP_DESK
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://ecosystem.hubspot.com/marketplace/listing/fini-ai-3590901
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
