@@ -5,6 +5,7 @@ checked:
 - https://azuremarketplace.microsoft.com/
 - zendesk/integrations/zendesk-integration-edges.yml
 - hubspot/integrations/hubspot-integration-edges.yml
+- intercom/integrations/intercom-integration-edges.yml
 marketplace_apps: []
 edges:
 - partner_name: Microsoft Azure Marketplace
@@ -72,6 +73,23 @@ edges:
   detected: '2026-10-21'
   detected_by: mirror-platform-listings.py
   category: HELP_DESK
+- partner_name: Intercom (own)
+  partner: intercom
+  partner_match: mirror
+  mirror_match: domain
+  type: marketplace
+  relationship: platform-app
+  direction: third-party
+  channel: partner-built
+  marketplace: own
+  evidence: https://www.intercom.com/app-store/?app_package_code=ask-fini-ai
+  mirror_of: intercom/integrations/intercom-integration-edges.yml
+  apps:
+  - Sophie AI
+  listing_count: 1
+  detected: '2026-10-23'
+  detected_by: mirror-platform-listings.py
+  category: Intercom App Store app
 source:
 - gorgias/integrations/gorgias-integration-edges.yml
 - zendesk/integrations/zendesk-integration-edges.yml
